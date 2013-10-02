@@ -1,5 +1,5 @@
 Moviemania20::Application.routes.draw do
-  root 'pages#home'
+  root 'pages#index'
   get "pages/contacts"
   get "pages/about"
   get "pages/help"

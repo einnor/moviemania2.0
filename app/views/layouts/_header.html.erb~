@@ -1,0 +1,32 @@
+<div class="logo">
+  <form>
+  	<input class="round right" type="text" placeholder="Search Movie" />
+ 	</form>
+
+</div>
+
+
+<nav class="top-bar hide-for-small round">
+	<ul class="title-area">
+		<li class="name">
+			<h4><%= link_to "MovieMania 2.0", root_path %></h4>
+		</li>
+		<li class="toggle-topbar"><a href="#"></a></li>
+	</ul>
+
+	<section class="top-bar-section">
+		<ul class="right">
+			<li class="divider"></li>
+			<li><%= link_to "Home", root_path %></li>
+			<li class="divider"></li>
+			<li><%= link_to "Contacts", pages_contacts_path %></li>
+			<li class="divider"></li>
+			<li><%= link_to "About", pages_about_path %></li>
+			<li class="divider"></li>
+			<li><%= link_to "Help", pages_help_path%></li>
+			<li class="divider"></li>
+			<li><%= link_to "Login", "#"%></li>
+		</ul>
+	</section>
+
+</nav>
