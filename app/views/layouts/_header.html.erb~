@@ -1,7 +1,12 @@
 <div class="logo">
-  <form>
-  	<input class="round right" type="text" placeholder="Search Movie" />
- 	</form>
+	<div class="row">
+		<div class="small-9 columns"></div>
+ 		<div class="small-3 columns">
+  		<form>
+  			<input class="round" type="text" placeholder="Search Movie" />
+  		</form>
+  	</div>
+	</div>
 
 </div>
 

@@ -14,3 +14,51 @@ h4{
 	text-indent: 10px;
 	font-family: "Times New Roman", Arial, "MS Trebuchet", sans-serif;
 }
+
+.container{
+	width: 100%
+	padding: 20px 20px 20px 20px;
+}
+
+footer{
+text-align: center;
+background-color: #000000;
+}
+
+div ul li img{
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+#navcontainer{
+	text-align: center;
+	float:none;
+}
+
+#navcontainer ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-align: center;
+	display: inline;
+}
+
+#navcontainer ul li{
+	display: inline;
+	position: relative;
+}
+
+#navcontainer ul li a{
+	text-decoration: none;
+	padding: .2em 1em;
+	color: #444;
+}
+
+#navcontainer ul li a:hover{
+	color: #369;
+}
+
+p a{
+	color: #258;
+}

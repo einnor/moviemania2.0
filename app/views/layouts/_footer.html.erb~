@@ -1,0 +1,28 @@
+<footer class="round">
+	<div class="zurb-footer-bottom">
+		<div class="row" id="navcontainer">
+			<div class="small-8 columns">
+				<ul>
+					<%= link_to "About", about_path %>
+					<%= link_to "Contacts", contacts_path %>
+					<%= link_to "Contact Us", contactus_path %>
+					<%= link_to "Partners", '#' %>
+					<%= link_to "Help", help_path %>
+				</ul>
+				<p class="copyright">&copy;2013 EINNOR, Inc. All rights reserved.</p>
+
+			</div>
+			<div class="small-4 columns">
+			<ul class="home-social">
+				<li><%= link_to image_tag("twitter.png", :alt => 'twitter', :class => "round", :width => 35, :height => 35), 'https://twitter.com' %></li>
+				<li><%= link_to image_tag("facebook.png", :alt => 'facebook', :class => "round", :width => 35, :height => 35), 'https://facebook.com' %>
+				<li><%= link_to image_tag("mail.png", :alt => 'mail', :class => "round", :width => 35, :height => 35), '#' %>
+			</ul>
+		</div>
+	</div>
+	<p>
+		Powered by: <%= link_to "Something Goes Here ", 'https://somethinggoeshere.com/' %>
+		Developed at: <%= link_to "Something Else Goes Here", 'https://somethingelsegoeshere.com' %>
+	</p>
+</div>
+</footer>
