@@ -28,6 +28,7 @@
   	</div>
   </fieldset>
 
+  <div></div>
 <% end %>
 
 <%= render "devise/shared/links" %>
