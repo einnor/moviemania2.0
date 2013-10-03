@@ -3,11 +3,14 @@
 		<div class="row" id="navcontainer">
 			<div class="small-8 columns">
 				<ul>
-					<%= link_to "About", about_path %>
-					<%= link_to "Contacts", contacts_path %>
-					<%= link_to "Contact Us", contactus_path %>
-					<%= link_to "Partners", '#' %>
-					<%= link_to "Help", help_path %>
+					<li>
+						<%= link_to image_tag("logo.jpg", :alt => 'logo', :class => "round", :width => 35, :height => 35), root_path %>
+					</li>
+					<li><%= link_to "About", about_path %></li>
+					<li><%= link_to "Contacts", contacts_path %></li>
+					<li><%= link_to "Contact Us", contactus_path %></li>
+					<li><%= link_to "Partners", '#' %></li>
+					<li><%= link_to "Help", help_path %></li>
 				</ul>
 				<p class="copyright">&copy;2013 EINNOR, Inc. All rights reserved.</p>
 

@@ -3,6 +3,9 @@
 		<div class="row" id="navcontainer">
 			<div class="small-8 columns">
 				<ul>
+					<li>
+						<%= link_to image_tag("logo.jpg", :alt => 'logo', :class => "round", :width => 35, :height => 35), root_path %>
+					</li>
 					<li><%= link_to "About", about_path %></li>
 					<li><%= link_to "Contacts", contacts_path %></li>
 					<li><%= link_to "Contact Us", contactus_path %></li>
@@ -20,9 +23,5 @@
 			</ul>
 		</div>
 	</div>
-	<p>
-		Powered by: <%= link_to "Something Goes Here ", 'https://somethinggoeshere.com/' %>
-		Developed at: <%= link_to "Something Else Goes Here", 'https://somethingelsegoeshere.com' %>
-	</p>
 </div>
 </footer>
