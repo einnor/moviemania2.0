@@ -1,0 +1,28 @@
+<%= form_for @cinema, :html => {:multipart => true} do |f|%>
+
+<div class="row">
+	<div class="small-8 columns">
+		<fieldset>
+			<legend>New Cinema</legend>
+
+			<%= f.label :name %><br />
+				<%= f.text_field :name %><br />
+
+				<%= f.label :email %>
+				<%= f.text_field :email %>
+
+				<%= f.label :description %>
+				<%= f.text_area :description %>
+
+				<%= f.file_field :cinemalogo %>
+
+				<%= f.label :remote_cinemalogo_url, " or image URL" %>
+				<%= f.text_field :remote_cinemalogo_url %> <br />
+
+				<%= f.submit "Submit", :class => "small button radius" %>
+
+		</fieldset>
+	</div>
+</div>
+
+<% end %>

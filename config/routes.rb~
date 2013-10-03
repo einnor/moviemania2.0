@@ -1,9 +1,16 @@
 Moviemania20::Application.routes.draw do
+  get "cinemas/new"
+  get "cinemas/edit"
+  get "cinemas/show"
+  get "cinemas/update"
+  get "cinemas/create"
+  get "cinemas/destroy"
+  devise_for :admins
   root 'pages#home'
   get "/contacts",							:to => "pages#contacts"
-  get "pages/about",						:to => "pages#about"
-  get "pages/help",							:to => "pages#help"
-  get "pages/contactus",				:to => "pages#contactsus"
+  get "/about",						:to => "pages#about"
+  get "/help",							:to => "pages#help"
+  get "/contactus",				:to => "pages#contactsus"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

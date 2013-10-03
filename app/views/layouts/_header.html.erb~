@@ -15,7 +15,6 @@
 	<ul class="title-area">
 		<li class="name">
 			<h4><%= link_to "MovieMania 2.0", root_path %></h4>
-			<li><%= link_to image_tag("twitter.png", :alt => 'twitter', :class => "round", :width => 35, :height => 35), 'https://twitter.com' %></li>
 		</li>
 
 		<li class="toggle-topbar"><a href="#"></a></li>
@@ -25,6 +24,8 @@
 		<ul class="right">
 			<li class="divider"></li>
 			<li><%= link_to "Home", root_path %></li>
+			<li class="divider"></li>
+			<li><%= link_to "Cinemas", '#' %></li>
 			<li class="divider"></li>
 			<li><%= link_to "Contacts", contacts_path %></li>
 			<li class="divider"></li>

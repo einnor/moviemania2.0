@@ -11,6 +11,7 @@
 #
 
 class Cinema < ActiveRecord::Base
+	mount_uploader :cinemalogo, CinemalogoUploader
 
 	email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 

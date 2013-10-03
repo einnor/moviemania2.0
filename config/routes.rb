@@ -1,4 +1,6 @@
 Moviemania20::Application.routes.draw do
+  resources :cinemas
+
   devise_for :admins
   root 'pages#home'
   get "/contacts",							:to => "pages#contacts"
