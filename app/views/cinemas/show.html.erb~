@@ -1,2 +1,11 @@
-<h1>Cinemas#show</h1>
-<p>Find me in app/views/cinemas/show.html.erb</p>
+<div class="row">
+	<div class="large-12 columns">
+		<div class="panel">
+			<%= image_tag @cinema.cinemalogo.url(:large) %> <br />
+			<legend><%= @cinema.name %></legend> <br />
+			<%= @cinema.description %><br />
+			<%= @cinema.created_at %>
+		</div>
+	</div>
+
+</div>

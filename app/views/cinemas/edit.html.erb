@@ -1,2 +1,30 @@
-<h1>Cinemas#edit</h1>
-<p>Find me in app/views/cinemas/edit.html.erb</p>
+<%= form_for @cinema, :html => {:multipart => true} do |f|%>
+
+	<div class="row">
+		<div class="large-8 columns">
+			<fieldset class="round">
+				<legend>Edit Cinema</legend>
+
+				<%= f.label :name %><br />
+				<%= f.text_field :name%><br />
+
+				<%= f.label :email %><br />
+				<%= f.text_field :email%><br />
+
+				<%= f.label :description %><br />
+				<%= f.text_field :description%><br />
+
+				<%= image_tag @cinema.cinemalogo.url(:thumb) %>
+
+				<%= f.file_field :cinemalogo %>
+
+				<%= f.label :remote_cinemalogo_url, " or image URL" %>
+				<%= f.text_field :remote_cinemalogo_url %> <br />
+
+				<%= f.submit "Submit", :class => "small button radius" %>
+
+			</fieldset>
+		</div>
+	</div>
+
+<% end %>

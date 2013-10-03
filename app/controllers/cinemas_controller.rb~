@@ -18,7 +18,7 @@ class CinemasController < ApplicationController
   def update
   	@cinema = Cinema.find(params[:id])
 
-		if @cinema.update_attributes(params.require(:cinema).permit(:name, :email, :description))
+		if @cinema.update_attributes(params.require(:cinema).permit(:name, :email, :description, :cinemalogo))
 			redirect_to cinemas_path, :notice => "The cinema details have been successfully updated"
 		else
 			render "edit"
@@ -26,7 +26,7 @@ class CinemasController < ApplicationController
   end
 
   def create
-  	@cinema = Cinema.new(params.require(:cinema).permit(:name, :email, :description))
+  	@cinema = Cinema.new(params.require(:cinema).permit(:name, :email, :description, :cinemalogo))
 
   	if @cinema.save
 			redirect_to root_path, :notice => "The cinema was successfully saved"

@@ -1,6 +1,6 @@
 <% @cinemas.each do |cinema| %>
 
-	<div class="panel">
+	<div class="panel round">
 		<div class="row">
 
   		<div class="small-2 columns">
@@ -8,14 +8,27 @@
   		</div>
 
   		<div class="small-10 columns">
-  			<legend><%= cinema.name %></legend><br />
+  			<h5><%= cinema.name %></h5>
   			<p><%= cinema.description %> </p>
-				<%= link_to "Show", cinema %>
-				<% if admin_signed_in? %> |
-				<%= link_to "Edit", edit_cinema_path(cinema) %> |
-				<%= link_to "Destroy", cinema, :confirm => "Are you sure?", :method => :delete %>
-				<% end %>
 
+
+
+				<section class="top-bar-section round">
+					<ul class="center">
+
+						<li><%= link_to "Show", cinema %></li>
+						<% if admin_signed_in? %>
+						<li class="divider"></li>
+						<li><%= link_to "Edit", edit_cinema_path(cinema) %></li>
+						<li class="divider"></li>
+						<li><%= link_to "Destroy", cinema, :confirm => "Are you sure?", :method => :delete %></li>
+						<% end %>
+						<li class="divider"></li>
+						<li><%= link_to "Movies Showing", '#' %></li>
+						<li class="divider"></li>
+						<li><%= link_to "Movies Coming Soon", '#' %></li>
+					</ul>
+				</section>
   		</div>
 		</div>
 	</div>
