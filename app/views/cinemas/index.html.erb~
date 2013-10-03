@@ -1,6 +1,6 @@
 <% @cinemas.each do |cinema| %>
 
-	<div class="panel round">
+	<div class="panel">
 		<div class="row">
 
   		<div class="small-2 columns">
