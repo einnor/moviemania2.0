@@ -1,5 +1,11 @@
 <% @cinemas.each do |cinema| %>
 
+	<div class="row">
+		<div class="large-6 columns">
+			<a href=<%= new_cinema_path %> class="large button radius ">Add New Cinema</a>
+		</div>
+	</div>
+
 	<div class="panel round">
 		<div class="row">
 
@@ -14,7 +20,7 @@
 
 
 				<section class="top-bar-section round">
-					<ul class="center">
+					<ul class="right">
 
 						<li><%= link_to "Show", cinema %></li>
 						<% if admin_signed_in? %>

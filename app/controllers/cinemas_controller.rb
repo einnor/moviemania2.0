@@ -34,7 +34,7 @@ class CinemasController < ApplicationController
   	@cinema = Cinema.new(params.require(:cinema).permit(:name, :email, :description, :cinemalogo))
 
   	if @cinema.save
-			redirect_to root_path, :notice => "The cinema was successfully saved"
+			redirect_to cinemas_path, :notice => "The cinema was successfully saved"
 		else
 			render "new"
 		end

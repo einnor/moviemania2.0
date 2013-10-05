@@ -1,4 +1,13 @@
+<% if admin_signed_in? %>
+	<div class="row">
+		<div class="large-6 columns">
+			<a href=<%= new_cinema_path %> class="large button radius ">Add New Cinema</a>
+		</div>
+	</div>
+<% end %>
+
 <% @cinemas.each do |cinema| %>
+
 
 	<div class="panel round">
 		<div class="row">
