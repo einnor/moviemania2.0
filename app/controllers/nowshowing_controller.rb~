@@ -20,7 +20,6 @@ class NowshowingController < ApplicationController
   end
 
   def update
-  	@title = "Update Now Showing"
   	@nowshowing = Nowshowing.find(params[:id])
   end
 

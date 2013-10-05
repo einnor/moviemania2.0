@@ -25,7 +25,9 @@
 			<li class="divider"></li>
 			<li><%= link_to "Home", root_path %></li>
 			<li class="divider"></li>
-			<li><%= link_to "Cinemas", new_cinema_path %></li>
+			<li><%= link_to "Cinemas", cinemas_path %></li>
+			<li class="divider"></li>
+			<li class="has-dropdown"><%= link_to "Movies", '#' %></li>
 			<li class="divider"></li>
 			<li><%= link_to "Contacts", contacts_path %></li>
 			<li class="divider"></li>

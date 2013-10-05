@@ -12,7 +12,7 @@
 				<%= f.text_area :synopsis %>
 
 				<%= f.label :category %> <br />
-				<%= f.text_field :category %>
+				<%= f.text_area :category %>
 
 				<%= f.label :youtubestub %>
 				<%= f.text_field :youtubestub %>
