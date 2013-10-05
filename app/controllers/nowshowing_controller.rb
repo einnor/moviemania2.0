@@ -25,7 +25,7 @@ class NowshowingController < ApplicationController
   end
 
   def create
-  	@nowshowing = Nowshowing.new(params.require(:nowshowing).permit(:title, :synopsis, :youtubestub, :price, :category, :cinemashowing))
+  	@nowshowing = Nowshowing.new(params.require(:nowshowing).permit(:title, :synopsis, :youtubestub, :price, :category, :cinemashowing, :nowshowingcover))
 
   	if @nowshowing.save
 			redirect_to nowshowing_index_path, :notice => "The movie was successfully saved."

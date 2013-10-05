@@ -25,9 +25,25 @@
 			<li class="divider"></li>
 			<li><%= link_to "Home", root_path %></li>
 			<li class="divider"></li>
-			<li><%= link_to "Cinemas", cinemas_path %></li>
+			<li class="has-dropdown">
+				<%= link_to "Cinemas", cinemas_path %>
+				<% @cinemas = Cinema.all %>
+				<ul class="dropdown">
+				<% @cinemas.each do |cinema| %>
+
+					<li><%= link_to cinema.name, '#' %></li>
+				<% end %>
+				</ul>
+
+			</li>
 			<li class="divider"></li>
-			<li class="has-dropdown"><%= link_to "Movies", '#' %></li>
+			<li class="has-dropdown">
+				<%= link_to "Movies", '#' %>
+				<ul class="dropdown">
+					<li><%= link_to "Now Showing", nowshowing_index_path %></li>
+					<li><%= link_to "Coming Soon", '#' %></li>
+				</ul>
+			</li>
 			<li class="divider"></li>
 			<li><%= link_to "Contacts", contacts_path %></li>
 			<li class="divider"></li>

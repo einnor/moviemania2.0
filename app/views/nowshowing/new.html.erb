@@ -12,18 +12,21 @@
 				<%= f.text_area :synopsis %>
 
 				<%= f.label :category %> <br />
-				<%= f.text_field :category %>
+				<%= f.select :category, options_for_select(%w[Animation Comedy Drama Fantasy Horror Sci-fi Thriller]) %>
 
-				<%= f.label :youtubestub %>
+				<%= f.label :youtube_stub %>
 				<%= f.text_field :youtubestub %>
 
 				<%= f.label :price %>
 				<%= f.text_field :price %>
 
+				<%= f.label :cinema_showing %>
+				<%= f.collection_select :cinemashowing, Cinema.order(:name), :id, :name, include_blank:true %>
+
 				<%= f.label :cover %> <br />
 				<%= f.file_field:cover %>
 
-				<%= f.submit "Post", :class => "small button radius" %>
+				<%= f.submit "Submit", :class => "small button radius" %>
 			<fieldset>
 			</div>
 		</div>
