@@ -1,0 +1,18 @@
+<% if @cinema.errors.any? %>
+	<div id="error_explanation" class="round">
+		<h2>
+			<%= pluralize(@cinema.errors.count, "error") %>
+			prohibited this cinema from being saved:
+		</h2>
+
+		<p>
+			There were problems with the following fields:
+		</p>
+		<ul>
+			<%= @cinema.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+
+	</div>
+<% end %>

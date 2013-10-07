@@ -1,4 +1,5 @@
-class NowshowingController < ApplicationController
+class NowshowingsController < ApplicationController
+
   def index
   	@nowshowing = Nowshowing.all
   	@title = "Now Showing"
@@ -39,4 +40,5 @@ class NowshowingController < ApplicationController
 		@nowshing.destroy
 		redirect_to nowshowing_index_path, :notice => "The movie has been successfully deleted."
   end
+
 end

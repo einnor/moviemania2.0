@@ -1,0 +1,26 @@
+<% if admin_signed_in? %>
+	<div class="row">
+		<div class="large-4 columns">
+			<a href=<%= new_nowshowing_path %> class="small button radius ">Add New Now Showing</a>
+		</div>
+	</div>
+<% end %>
+
+<% @nowshowing.each do |nowshowing| %>
+
+	<div class="row">
+		<div class="large-6 columns">
+			<div class="panel round">
+				<%= image_tag nowshowing.nowshowingcover.url(:large) %>
+				<h5>nowshowing.title</h5>
+				<p>Price : <%= number_to_currency nowshowing.price %></p>
+				<p><%= nowshowing.synopsis %></p>
+				<% @cinema = Cinema.all%>
+				<% @cinema.each do |cinema| %>
+				<p>Cinemas Showing : <i>The Movies are to be listed here</i></p>
+				<% end %>
+			</div>
+		</div>
+	</div>
+
+<% end %>
