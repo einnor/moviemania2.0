@@ -23,10 +23,10 @@
 				<%= f.label :cinema_showing %>
 				<%= f.collection_select :cinemashowing, Cinema.order(:name), :id, :name, include_blank:true %>
 
-				<%= image_tag @nowshowing.nowshowingcover.url(:thumb) %>
+				<%= image_tag @cinema.cinemalogo.url(:thumb) %>
 
-				<%= f.label :nowshowingcover %>
-				<%= f.file_field :nowshowingcover %>
+				<%= f.label :cinemalogo %>
+				<%= f.file_field :cinemalogo %>
 
 				<%= f.label :remote_nowshowingcover_url, " or image URL" %>
 				<%= f.text_field :remote_nowshowingcover_url %> <br />

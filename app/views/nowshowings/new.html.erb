@@ -26,6 +26,9 @@
 				<%= f.label :nowshowingcover %> <br />
 				<%= f.file_field:nowshowingcover %>
 
+				<%= f.label :remote_nowshowingcover_url, " or image URL" %>
+				<%= f.text_field :remote_nowshowingcover_url %> <br />
+
 				<%= f.submit "Submit", :class => "small button radius" %>
 			</fieldset>
 			</div>
