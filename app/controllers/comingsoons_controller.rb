@@ -23,7 +23,7 @@ class ComingsoonsController < ApplicationController
   	@comingsoon = Comingsoon.find(params[:id])
   	@title = "Update #{@comingsoon.title}"
 
-  	if @comingsoon.update_attributes(params.require(:comingsoon).permit(:title, :synopsis, :youtubestub, :category, :cinemashowing))
+  	if @comingsoon.update_attributes(params.require(:comingsoon).permit(:title, :synopsis, :youtubestub, :category, :cinemashowing, :comingsooncover))
 			redirect_to comingsoons_path, :notice => "The movie details have been successfully updated"
 		else
 			render "edit"
@@ -31,7 +31,7 @@ class ComingsoonsController < ApplicationController
   end
 
   def create
-  	@comingsoon = Comingsoon.new(params.require(:comingsoon).permit(:title, :synopsis, :youtubestub, :category, :cinemashowing))
+  	@comingsoon = Comingsoon.new(params.require(:comingsoon).permit(:title, :synopsis, :youtubestub, :category, :cinemashowing, :comingsooncover))
 
   	if @comingsoon.save
 			redirect_to comingsoons_path, :notice => "The movie was successfully saved"

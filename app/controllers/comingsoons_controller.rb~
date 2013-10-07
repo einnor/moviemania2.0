@@ -41,5 +41,8 @@ class ComingsoonsController < ApplicationController
   end
 
   def destroy
+  	@comingsoon = Comingsoon.find(params[:id])
+		@comingsoon.destroy
+		redirect_to comingsoons_path, :notice => "The movie has been deleted."
   end
 end
