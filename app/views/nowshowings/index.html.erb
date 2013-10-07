@@ -12,7 +12,8 @@
 		<div class="large-6 columns">
 			<div class="panel round">
 				<%= image_tag nowshowing.nowshowingcover.url(:large) %>
-				<h5>nowshowing.title</h5>
+				<h5><%= nowshowing.title %></h5>
+				<p><%= nowshowing.category %></p>
 				<p>Price : <%= number_to_currency nowshowing.price %></p>
 				<p><%= nowshowing.synopsis %></p>
 				<% @cinema = Cinema.all%>

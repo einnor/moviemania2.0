@@ -1,7 +1,7 @@
 <% if admin_signed_in? %>
 	<div class="row">
 		<div class="large-4 columns">
-			<a href=<%= new_nowshowing_path %> class="small button radius ">Add New Now Showing</a>
+			<a href=<%= new_nowshowing_path %> class="small button radius">Add New Now Showing</a>
 		</div>
 	</div>
 <% end %>

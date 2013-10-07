@@ -12,7 +12,8 @@
 		<div class="large-6 columns">
 			<div class="panel round">
 				<%= image_tag comingsoon.comingsooncover.url(:large) %>
-				<h5>comingsoon.title</h5>
+				<h5><%= comingsoon.title %></h5>
+				<p><%= comingsoon.category %></p>
 				<p><%= comingsoon.synopsis %></p>
 				<% @cinema = Cinema.all%>
 				<% @cinema.each do |cinema| %>
