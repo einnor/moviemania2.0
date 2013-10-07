@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: comingsoons
+#
+#  id              :integer          not null, primary key
+#  title           :string(255)
+#  synopsis        :text
+#  category        :string(255)
+#  youtubestub     :string(255)
+#  cinemashowing   :string(255)
+#  created_at      :datetime
+#  updated_at      :datetime
+#  comingsooncover :string(255)
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:

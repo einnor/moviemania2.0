@@ -23,8 +23,8 @@
 				<%= f.label :cinema_showing %>
 				<%= f.collection_select :cinemashowing, Cinema.order(:name), :id, :name, include_blank:true %>
 
-				<%= f.label :cover %> <br />
-				<%= f.file_field:cover %>
+				<%= f.label :nowshowingcover %> <br />
+				<%= f.file_field:nowshowingcover %>
 
 				<%= f.submit "Submit", :class => "small button radius" %>
 			</fieldset>
