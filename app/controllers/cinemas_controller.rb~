@@ -11,7 +11,7 @@ class CinemasController < ApplicationController
 
   def edit
   	@cinema = Cinema.find(params[:id])
-  	@title = "Edit Cinema"
+  	@title = "Edit #{@cinema.name}"
   end
 
   def show
@@ -21,7 +21,7 @@ class CinemasController < ApplicationController
 
   def update
   	@cinema = Cinema.find(params[:id])
-  	@title = "Update Cinema"
+  	@title = "Update #{@cinema.name}"
 
 		if @cinema.update_attributes(params.require(:cinema).permit(:name, :email, :description, :cinemalogo))
 			redirect_to cinemas_path, :notice => "The cinema details have been successfully updated"
@@ -34,7 +34,7 @@ class CinemasController < ApplicationController
   	@cinema = Cinema.new(params.require(:cinema).permit(:name, :email, :description, :cinemalogo))
 
   	if @cinema.save
-			redirect_to root_path, :notice => "The cinema was successfully saved"
+			redirect_to cinemas_path, :notice => "The cinema was successfully saved"
 		else
 			render "new"
 		end

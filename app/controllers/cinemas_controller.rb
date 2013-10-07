@@ -11,7 +11,7 @@ class CinemasController < ApplicationController
 
   def edit
   	@cinema = Cinema.find(params[:id])
-  	@title = "Edit Cinema"
+  	@title = "Edit #{@cinema.name}"
   end
 
   def show
@@ -21,7 +21,7 @@ class CinemasController < ApplicationController
 
   def update
   	@cinema = Cinema.find(params[:id])
-  	@title = "Update Cinema"
+  	@title = "Update #{@cinema.name}"
 
 		if @cinema.update_attributes(params.require(:cinema).permit(:name, :email, :description, :cinemalogo))
 			redirect_to cinemas_path, :notice => "The cinema details have been successfully updated"
@@ -44,6 +44,6 @@ class CinemasController < ApplicationController
   def destroy
   	@cinema = Cinema.find(params[:id])
 		@cinema.destroy
-		redirect_to cinemas_path, :notice => "Your post has been deleted."
+		redirect_to cinemas_path, :notice => "The cinema has been deleted."
   end
 end

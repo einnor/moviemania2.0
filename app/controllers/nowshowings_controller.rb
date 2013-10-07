@@ -23,6 +23,12 @@ class NowshowingsController < ApplicationController
   def update
   	@title = "Update Now Showing"
   	@nowshowing = Nowshowing.find(params[:id])
+
+  	if @nowshowing.update_attributes(params.require(:nowshowing).permit(:title, :synopsis, :youtubestub, :price, :category, :cinemashowing, :nowshowingcover))
+			redirect_to nowshowings_path, :notice => "The movie details have been successfully updated"
+		else
+			render "edit"
+		end
   end
 
   def create

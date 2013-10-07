@@ -1,6 +1,13 @@
 Moviemania20::Application.routes.draw do
 
-	resources :nowshowing
+  get "comingsoons/index"
+  get "comingsoons/new"
+  get "comingsoons/show"
+  get "comingsoons/edit"
+  get "comingsoons/update"
+  get "comingsoons/create"
+  get "comingsoons/destroy"
+	resources :nowshowings
   resources :cinemas
 
   devise_for :admins
