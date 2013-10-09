@@ -28,7 +28,7 @@
 			<li class="has-dropdown">
 				<%= link_to "Cinemas", cinemas_path %>
 				<% @cinemas = Cinema.all %>
-				<ul class="dropdown">
+				<ul class="dropdown round">
 				<% @cinemas.each do |cinema| %>
 
 					<li><%= link_to cinema.name,  cinema %></li>
@@ -41,7 +41,7 @@
 				<%= link_to "Movies", '#' %>
 				<ul class="dropdown">
 					<li><%= link_to "Now Showing", nowshowings_path %></li>
-					<li><%= link_to "Coming Soon", '#' %></li>
+					<li><%= link_to "Coming Soon", comingsoons_path %></li>
 				</ul>
 			</li>
 			<li class="divider"></li>

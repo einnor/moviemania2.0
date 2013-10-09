@@ -1,17 +1,9 @@
-<% if admin_signed_in? %>
-	<div class="row">
-		<div class="large-4 columns">
-			<a href=<%= new_comingsoon_path %> class="small button radius">Add New Coming Soon</a>
-		</div>
-	</div>
-<% end %>
 
+<div class="row">
 <% @comingsoons.each do |comingsoon| %>
 
-	<div class="row">
-		<div class="large-6 columns">
-			<div class="panel round">
-				<%= image_tag comingsoon.comingsooncover.url(:large) %>
+		<div class="large-4 columns">
+				<%= link_to (image_tag comingsoon.comingsooncover.url(:large), :class => "round"), comingsoon %>
 				<h5><%= comingsoon.title %></h5>
 				<p><%= comingsoon.category %></p>
 				<p><%= comingsoon.synopsis %></p>
@@ -19,8 +11,14 @@
 				<% @cinema.each do |cinema| %>
 				<p>Cinemas Showing : <i>The Movies are to be listed here</i></p>
 				<% end %>
+				<p><%= link_to "Show", comingsoon %> |
+
+						<% if admin_signed_in? %>
+
+						<%= link_to "Edit", edit_comingsoon_path(comingsoon) %> |
+						<%= link_to "Destroy", comingsoon, :confirm => "Are you sure?", :method => :delete %>
+						<% end %></p>
 			</div>
-		</div>
-	</div>
 
 <% end %>
+</div>

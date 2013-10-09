@@ -41,7 +41,7 @@ gem "omniauth", "~> 1.1.4"
 
 #gem "paypal", "~> 2.0.0"
 
-#gem "activemerchant", "~> 1.38.1"
+gem "activemerchant", "~> 1.38.1"
 
 #gem "activeadmin", "~> 0.6.1"
 

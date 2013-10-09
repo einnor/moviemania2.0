@@ -12,10 +12,12 @@
 #  updated_at      :datetime
 #  category        :string(255)
 #  nowshowingcover :string(255)
+#  cinema_id       :integer
 #
 
 class Nowshowing < ActiveRecord::Base
 	belongs_to :cinema
+	default_scope :order => "nowshowings.created_at DESC"
 
 	mount_uploader :nowshowingcover, NowshowingcoverUploader
 

@@ -16,6 +16,7 @@
 
 class Nowshowing < ActiveRecord::Base
 	belongs_to :cinema
+	defUlt_scope :order => "nowshowings.created_at DESC"
 
 	mount_uploader :nowshowingcover, NowshowingcoverUploader
 
@@ -25,5 +26,7 @@ class Nowshowing < ActiveRecord::Base
 	validates :youtubestub,	presence: true
 	validates :price,	presence: true
 	validates :cinemashowing,	presence: true
+	validates :category,	presence: true
+	validates :nowshowingcover,	presence: true
 
 end

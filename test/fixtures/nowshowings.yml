@@ -12,6 +12,7 @@
 #  updated_at      :datetime
 #  category        :string(255)
 #  nowshowingcover :string(255)
+#  cinema_id       :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html

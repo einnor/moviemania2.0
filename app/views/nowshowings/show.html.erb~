@@ -1,2 +1,13 @@
-<h1>Nowshowing#show</h1>
-<p>Find me in app/views/nowshowing/show.html.erb</p>
+<div class="row">
+	<div class="large-12 columns">
+		<div class="panel round">
+			<%= image_tag @nowshowing.nowshowingcover.url(:large), :class => "round" %> <br />
+			<legend><%= @nowshowing.title %></legend> <br />
+			<%= @nowshowing.category %><br />
+			<%= @nowshowing.synopsis %><br />
+			<%= @nowshowing.price %><br />
+			<%= @nowshowing.created_at %>
+		</div>
+	</div>
+
+</div>

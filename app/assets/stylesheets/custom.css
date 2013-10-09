@@ -15,9 +15,22 @@ h4{
 	font-family: "Times New Roman", Arial, "MS Trebuchet", sans-serif;
 }
 
+h5{
+	text-align: center;
+	font-family: Arial, "MS Trebuchet", sans-serif;
+	font: 80% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+
+}
+
+p{
+	font-family: Arial, "MS Trebuchet", sans-serif;
+	font: 75% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+	text-align: center;
+
+}
+
 .container{
 	width: 100%
-	padding: 20px 20px 20px 20px;
 }
 
 div.center{
@@ -105,4 +118,9 @@ div.field, div.actions{
 #error_explanation ul li{
 	font-size: 12px;
 	list-style: square;
+}
+
+div.leftalignment{
+	float: left;
+	width: 30%;
 }

@@ -1,11 +1,9 @@
 <div class="row">
 	<div class="large-12 columns">
-		<div class="panel round">
 			<%= image_tag @cinema.cinemalogo.url(:large), :class => "round" %> <br />
-			<legend><%= @cinema.name %></legend> <br />
-			<%= @cinema.description %><br />
-			<%= @cinema.created_at %>
-		</div>
+			<h5><%= link_to @cinema.name, '#' %></h5> <br />
+			<p><%= @cinema.description %></p>
+			<p><%= @cinema.created_at %></p>
 	</div>
 
 </div>

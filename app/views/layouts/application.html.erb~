@@ -26,8 +26,18 @@
 
   	<section role="main">
   		<div class="row">
-  			<div class="twelve columns">
+  			<div class="twelve columns leftalignment">
+
+  				<% if notice %>
+  					<p class="alert alert-notice"><%= notice %></p>
+  				<% end %>
+
+  				<% if alert %>
+  					<p class="alert alert-error"><%= alert %></p>
+  				<% end %>
+
 					<%= yield %>
+
   			</div>
   		</div>
   	</section>

@@ -8,11 +8,16 @@
 #  description :text
 #  created_at  :datetime
 #  updated_at  :datetime
+#  cinemalogo  :string(255)
 #
 
 class Cinema < ActiveRecord::Base
 
-	has_many :nowshowing
+	has_many :nowshowings, :dependent => :destroy
+	has_many :comingsoons, :dependent => :destroy
+
+	defUlt_scope :order => "nowshowings.created_at DESC"
+	defUlt_scope :order => "comingsoons.created_at DESC"
 
 	mount_uploader :cinemalogo, CinemalogoUploader
 
@@ -24,5 +29,6 @@ class Cinema < ActiveRecord::Base
 													format: {with: email_regex},
 													uniqueness: {case_sensitive: false }
 	validates :description,	presence: true
+	validates :cinemalogo,	presence: true
 
 end

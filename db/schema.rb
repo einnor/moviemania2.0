@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131007064728) do
+ActiveRecord::Schema.define(version: 20131009164112) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20131007064728) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "comingsooncover"
+    t.integer  "cinema_id"
   end
 
   create_table "nowshowings", force: true do |t|
@@ -61,6 +62,7 @@ ActiveRecord::Schema.define(version: 20131007064728) do
     t.datetime "updated_at"
     t.string   "category"
     t.string   "nowshowingcover"
+    t.integer  "cinema_id"
   end
 
 end

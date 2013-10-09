@@ -32,10 +32,11 @@ class NowshowingsController < ApplicationController
   end
 
   def create
-  	@nowshowing = Nowshowing.new(params.require(:nowshowing).permit(:title, :synopsis, :youtubestub, :price, :category, :cinemashowing, :nowshowingcover))
+  	@cinema = Cinema.new
+  	@nowshowing = Nowshowings.new(params.require(:nowshowing).permit(:title, :synopsis, :youtubestub, :price, :category, :cinemashowing, :nowshowingcover))
 
   	if @nowshowing.save
-			redirect_to nowshowing_index_path, :notice => "The movie was successfully saved."
+			redirect_to nowshowings_path, :notice => "The movie was successfully saved."
 		else
 			render "new"
 		end
@@ -43,8 +44,8 @@ class NowshowingsController < ApplicationController
 
   def destroy
   	@nowshowing = Nowshowing.find(params[:id])
-		@nowshing.destroy
-		redirect_to nowshowing_index_path, :notice => "The movie has been successfully deleted."
+		@nowshowing.destroy
+		redirect_to nowshowings_path, :notice => "The movie has been successfully deleted."
   end
 
 end

@@ -1,13 +1,11 @@
 <div class="row">
 	<div class="large-12 columns">
-		<div class="panel round">
 			<%= image_tag @nowshowing.nowshowingcover.url(:large), :class => "round" %> <br />
-			<legend><%= @nowshowing.title %></legend> <br />
-			<%= @nowshowing.category %><br />
-			<%= @nowshowing.synopsis %><br />
-			<%= @nowshowing.price %><br />
-			<%= @nowshowing.created_at %>
-		</div>
+			<h5><%= @nowshowing.title %></h5>
+			<p><%= @nowshowing.category %></p>
+			<p><%= @nowshowing.synopsis %></p>
+			<p><%= @nowshowing.price %></p>
+			<p><%= @nowshowing.created_at %></p>
 	</div>
 
 </div>

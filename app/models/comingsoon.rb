@@ -11,9 +11,14 @@
 #  created_at      :datetime
 #  updated_at      :datetime
 #  comingsooncover :string(255)
+#  cinema_id       :integer
 #
 
 class Comingsoon < ActiveRecord::Base
+
+	belongs_to :cinema
+	defUlt_scope :order => "comingsoons.created_at DESC"
+
 	mount_uploader :comingsooncover, ComingsooncoverUploader
 
 	validates :title,	presence: true,
@@ -23,5 +28,6 @@ class Comingsoon < ActiveRecord::Base
 	validates :youtubestub,	presence: true
 	validates :cinemashowing,	presence: true
 	validates :comingsooncover,	presence: true
+	validates :cinema_id, :presence => true
 
 end

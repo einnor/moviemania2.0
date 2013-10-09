@@ -13,7 +13,8 @@
 
 class Cinema < ActiveRecord::Base
 
-	has_many :nowshowing
+	has_many :nowshowings, :dependent => :destroy
+	has_many :comingsoons, :dependent => :destroy
 
 	mount_uploader :cinemalogo, CinemalogoUploader
 
