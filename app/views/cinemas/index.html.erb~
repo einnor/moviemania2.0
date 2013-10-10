@@ -5,24 +5,26 @@
 		</div>
 	</div>
 <% end %>
-<div class="row">
 
+
+<div class="row">
 
 <% @cinemas.each do |cinema| %>
 
 
   		<div class="large-4 columns ">
-  			<%= link_to (image_tag cinema.cinemalogo.url(:thumb), :class => "round"), cinema %>
+  			<%= link_to (image_tag cinema.cinemalogo.url(:thumb), :class => "round center"), cinema %>
   			<h5><%= link_to cinema.name, cinema %></h5>
   			<p><%= cinema.description %> </p>
 
-
-						<p><%= link_to "Show", cinema %> |
-						<%= link_to "Showing", nowshowings_path %> |
-						<%= link_to "Coming Soon", '#' %> <br />
+				<p>
+					<%= link_to "Now Showing", cinema_nowshowings_path(@cinema) %> |
+						<%= link_to "Coming Soon", cinema_comingsoons_path(@cinema) %> <br />
 
 						<% if admin_signed_in? %>
 
+						<%= link_to "Add Showing", new_cinema_nowshowing_path(cinema) %> |
+						<%= link_to "Add Coming Soon", new_cinema_comingsoon_path(cinema) %> |
 						<%= link_to "Edit", edit_cinema_path(cinema) %> |
 						<%= link_to "Destroy", cinema, :confirm => "Are you sure?", :method => :delete %>
 						<% end %></p>

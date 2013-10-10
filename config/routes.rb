@@ -1,8 +1,9 @@
 Moviemania20::Application.routes.draw do
 
-  resources :comingsoons
-	resources :nowshowings
-  resources :cinemas
+  resources :cinemas do
+  	resources :nowshowings
+  	resources :comingsoons
+  end
 
   devise_for :admins
   root 'pages#home'

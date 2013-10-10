@@ -28,7 +28,7 @@
 			<li class="has-dropdown">
 				<%= link_to "Cinemas", cinemas_path %>
 				<% @cinemas = Cinema.all %>
-				<ul class="dropdown round">
+				<ul class="dropdown">
 				<% @cinemas.each do |cinema| %>
 
 					<li><%= link_to cinema.name,  cinema %></li>

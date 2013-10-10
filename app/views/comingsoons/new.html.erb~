@@ -1,5 +1,12 @@
-<%= form_for @comingsoon, :html => {:multipart => true} do |f|%>
-<%= render 'shared/nowshowing_error_messages' %>
+<div class="row">
+	<div class="large-12 columns">
+		<p><%= link_to "Back", cinemas %><p>
+	</div>
+</div>
+
+
+<%= form_for ([@cinema, @comingsoon]), :html => {:multipart => true} do |f|%>
+<%= render 'shared/comingsoon_error_messages' %>
 	<div class="row">
 		<div class="large-8 columns">
 			<fieldset class="round">
@@ -17,8 +24,8 @@
 				<%= f.label :youtube_stub %>
 				<%= f.text_field :youtubestub %>
 
-				<%= f.label :cinema_showing %>
-				<%= f.collection_select :cinemashowing, Cinema.order(:name), :id, :name, include_blank:true %>
+				<%= f.label :cinema_id %>
+				<%= f.collection_select :cinema_id, Cinema.order(:name), :id, :name, include_blank:true %>
 
 				<%= f.label :comingsooncover %> <br />
 				<%= f.file_field:comingsooncover %>
@@ -29,3 +36,9 @@
 		</div>
 
 <% end %>
+
+<div class="row">
+	<div class="large-12 columns">
+		<p><%= link_to "Back", cinemas %><p>
+	</div>
+</div>

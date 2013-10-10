@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
   	@title = "Home"
+  	@cinemas = Cinema.all
   end
 
   def contacts

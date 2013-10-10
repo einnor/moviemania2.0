@@ -9,6 +9,5 @@ class CreateComingsoons < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :comingsoons, [:cinema_id, :created_at]
   end
 end

@@ -1,6 +1,12 @@
 <div class="row">
 	<div class="large-12 columns">
-			<%= image_tag @comingsoon.comingsooncover.url(:large), :class => "round" %> <br />
+		<p><%= link_to "Back", cinema_comingsoons_path(@cinema) %><p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="large-12 columns">
+			<%= image_tag @comingsoon.comingsooncover.url(:large), :class => "round center" %> <br />
 			<h5><%= @comingsoon.title %></h5>
 			<p><%= @comingsoon.category %></p>
 			<p><%= @comingsoon.synopsis %></p>
@@ -8,4 +14,10 @@
 			<p><%= @comingsoon.created_at %></p>
 	</div>
 
+</div>
+
+<div class="row">
+	<div class="large-12 columns">
+		<p><%= link_to "Back", cinema_comingsoons_path(@cinema) %><p>
+	</div>
 </div>

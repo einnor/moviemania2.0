@@ -1,4 +1,7 @@
 class CinemasController < ApplicationController
+
+  before_action :set_cinema, only: [:show, :edit, :update, :destroy]
+
   def index
 		@cinemas = Cinema.all
 		@title = "Cinemas"
@@ -10,20 +13,17 @@ class CinemasController < ApplicationController
   end
 
   def edit
-  	@cinema = Cinema.find(params[:id])
   	@title = "Edit #{@cinema.name}"
   end
 
   def show
-		@cinema = Cinema.find(params[:id])
 		@title = @cinema.name
   end
 
   def update
-  	@cinema = Cinema.find(params[:id])
   	@title = "Update #{@cinema.name}"
 
-		if @cinema.update_attributes(params.require(:cinema).permit(:name, :email, :description, :cinemalogo))
+		if @cinema.update_attributes(cinema_params)
 			redirect_to cinemas_path, :notice => "The cinema details have been successfully updated"
 		else
 			render "edit"
@@ -31,7 +31,7 @@ class CinemasController < ApplicationController
   end
 
   def create
-  	@cinema = Cinema.new(params.require(:cinema).permit(:name, :email, :description, :cinemalogo))
+  	@cinema = Cinema.new(cinema_params)
 
   	if @cinema.save
 			redirect_to cinemas_path, :notice => "The cinema was successfully saved"
@@ -42,8 +42,18 @@ class CinemasController < ApplicationController
   end
 
   def destroy
-  	@cinema = Cinema.find(params[:id])
 		@cinema.destroy
 		redirect_to cinemas_path, :notice => "The cinema has been deleted."
   end
+
+  private
+
+  def set_cinema
+  	@cinema = Cinema.find(params[:id])
+  end
+
+  def cinema_params
+  	params.require(:cinema).permit(:name, :email, :description, :cinemalogo)
+  end
+
 end

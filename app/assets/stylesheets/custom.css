@@ -10,6 +10,12 @@
 	border-radius: 10px;
 }
 
+.center{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 h4{
 	text-indent: 10px;
 	font-family: "Times New Roman", Arial, "MS Trebuchet", sans-serif;
@@ -118,9 +124,4 @@ div.field, div.actions{
 #error_explanation ul li{
 	font-size: 12px;
 	list-style: square;
-}
-
-div.leftalignment{
-	float: left;
-	width: 30%;
 }

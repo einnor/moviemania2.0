@@ -1,48 +1,62 @@
 class ComingsoonsController < ApplicationController
+
+  before_action :load_cinema
+	before_action :set_comingsoon, only: [:show, :edit, :update, :destroy]
+
   def index
   	@title = "Coming Soon"
-  	@comingsoons = Comingsoon.all
+  	@comingsoons = @cinema.comingsoons
   end
 
   def new
   	@title = "New Movie"
-  	@comingsoon = Comingsoon.new
+  	@comingsoon = @cinema.comingsoons.build
   end
 
   def show
-  	@comingsoon = Comingsoon.find(params[:id])
   	@title = @comingsoon.title
   end
 
   def edit
-  	@comingsoon = Comingsoon.find(params[:id])
   	@title = "Edit #{@comingsoon.title}"
   end
 
   def update
-  	@comingsoon = Comingsoon.find(params[:id])
   	@title = "Update #{@comingsoon.title}"
 
-  	if @comingsoon.update_attributes(params.require(:comingsoon).permit(:title, :synopsis, :youtubestub, :category, :cinemashowing))
-			redirect_to comingsoons_path, :notice => "The movie details have been successfully updated"
+  	if @comingsoon.update_attributes(comingsoon_params)
+			redirect_to cinema_comingsoons_path, :notice => "The movie details have been successfully updated"
 		else
 			render "edit"
 		end
   end
 
   def create
-  	@comingsoon = Comingsoon.new(params.require(:comingsoon).permit(:title, :synopsis, :youtubestub, :category, :cinemashowing))
+  	@comingsoon = @cinema.comingsoons.build(comingsoon_params)
 
   	if @comingsoon.save
-			redirect_to comingsoons_path, :notice => "The movie was successfully saved"
+			redirect_to cinema_comingsoons_path, :notice => "The movie was successfully saved"
 		else
 			render "new"
 		end
   end
 
   def destroy
-  	@comingsoon = Comingsoon.find(params[:id])
 		@comingsoon.destroy
 		redirect_to comingsoons_path, :notice => "The movie has been deleted."
+  end
+
+  private
+
+  def load_cinema
+  	@cinema = Cinema.find(params[:cinema_id])
+  end
+
+  def set_comingsoon
+  	@comingsoon = @cinema.comingsoons.find(params[:id])
+  end
+
+  def comingsoon_params
+		params.require(:comingsoon).permit(:title, :synopsis, :youtubestub, :category, :comingsooncover)
   end
 end

@@ -7,7 +7,6 @@
 #  synopsis        :text
 #  category        :string(255)
 #  youtubestub     :string(255)
-#  cinemashowing   :string(255)
 #  created_at      :datetime
 #  updated_at      :datetime
 #  comingsooncover :string(255)

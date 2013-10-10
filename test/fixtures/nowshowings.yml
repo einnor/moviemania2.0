@@ -7,7 +7,6 @@
 #  synopsis        :text
 #  youtubestub     :string(255)
 #  price           :decimal(, )
-#  cinemashowing   :string(255)
 #  created_at      :datetime
 #  updated_at      :datetime
 #  category        :string(255)

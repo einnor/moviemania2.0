@@ -1,51 +1,62 @@
 class NowshowingsController < ApplicationController
 
+	before_action :load_cinema
+	before_action :set_nowshowing, only: [:show, :edit, :update, :destroy]
+
   def index
-  	@nowshowing = Nowshowing.all
   	@title = "Now Showing"
   end
 
   def new
-  	@nowshowing = Nowshowing.new
+  	@nowshowing = @cinema.nowshowings.build
   	@title = "New Now Showing"
   end
 
   def edit
-  	@nowshowing = Nowshowing.find(params[:id])
   	@title = "Edit Now Showing"
   end
 
   def show
-  	@nowshowing = Nowshowing.find(params[:id])
-  	@title = @nowshing.title
+  	@title = @nowshowing.title
   end
 
   def update
   	@title = "Update Now Showing"
-  	@nowshowing = Nowshowing.find(params[:id])
 
-  	if @nowshowing.update_attributes(params.require(:nowshowing).permit(:title, :synopsis, :youtubestub, :price, :category, :cinemashowing, :nowshowingcover))
-			redirect_to nowshowings_path, :notice => "The movie details have been successfully updated"
+  	if @nowshowing.update_attributes(nowshowing_params)
+			redirect_to cinema_nowshowings_path, :notice => "The movie details have been successfully updated"
 		else
 			render "edit"
 		end
   end
 
   def create
-  	@cinema = Cinema.new
-  	@nowshowing = @cinema.nowshowings.new(params.require(:nowshowing).permit(:title, :synopsis, :youtubestub, :price, :category, :cinemashowing, :nowshowingcover))
+  	@nowshowing = @cinema.nowshowings.build(nowshowing_params)
 
   	if @nowshowing.save
-			redirect_to nowshowings_path, :notice => "The movie was successfully saved."
+			redirect_to cinema_nowshowings_path, :notice => "The movie was successfully saved."
 		else
 			render "new"
 		end
   end
 
   def destroy
-  	@nowshowing = Nowshowing.find(params[:id])
-		@nowshowing.destroy
-		redirect_to nowshowings_path, :notice => "The movie has been successfully deleted."
+		@nowshing.destroy
+		redirect_to cinema_nowshowings_path, :notice => "The movie has been successfully deleted."
+  end
+
+  private
+
+  def load_cinema
+  	@cinema = Cinema.find(params[:cinema_id])
+  end
+
+  def set_nowshowing
+  	@nowshowing = @cinema.nowshowings.find(params[:id])
+  end
+
+  def nowshowing_params
+  	params.require(:nowshowing).permit(:title, :synopsis, :youtubestub, :price, :category, :nowshowingcover)
   end
 
 end

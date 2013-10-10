@@ -2,7 +2,7 @@
 
 	<div class="row">
 		<div class="large-8 columns">
-			<fieldset>
+			<fieldset class="round">
 				<legend>Edit Cinema</legend>
 
 				<%= f.label :name %><br />

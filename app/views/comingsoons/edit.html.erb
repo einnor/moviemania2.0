@@ -1,4 +1,10 @@
-<%= form_for @comingsoon, :html => {:multipart => true} do |f|%>
+<div class="row">
+	<div class="large-12 columns">
+		<p><%= link_to "Back", cinema_nowshowings_path(@cinema) %><p>
+	</div>
+</div>
+
+<%= form_for ([@cinema, @comingsoon]), :html => {:multipart => true} do |f|%>
 
 	<div class="row">
 		<div class="large-8 columns">
@@ -35,3 +41,9 @@
 	</div>
 
 <% end %>
+
+<div class="row">
+	<div class="large-12 columns">
+		<p><%= link_to "Back", cinema_nowshowings_path(@cinema) %><p>
+	</div>
+</div>

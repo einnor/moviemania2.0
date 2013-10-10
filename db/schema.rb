@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131009164112) do
+ActiveRecord::Schema.define(version: 20131010180519) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 20131009164112) do
     t.text     "synopsis"
     t.string   "category"
     t.string   "youtubestub"
-    t.string   "cinemashowing"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "comingsooncover"
@@ -57,7 +56,6 @@ ActiveRecord::Schema.define(version: 20131009164112) do
     t.text     "synopsis"
     t.string   "youtubestub"
     t.decimal  "price"
-    t.string   "cinemashowing"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "category"

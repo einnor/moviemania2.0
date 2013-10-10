@@ -9,6 +9,5 @@ class CreateNowshowings < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :nowshowings, [:cinema_id, :created_at]
   end
 end

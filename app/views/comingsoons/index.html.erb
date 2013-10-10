@@ -3,7 +3,7 @@
 <% @comingsoons.each do |comingsoon| %>
 
 		<div class="large-4 columns">
-				<%= link_to (image_tag comingsoon.comingsooncover.url(:large), :class => "round"), comingsoon %>
+				<%= link_to (image_tag comingsoon.comingsooncover.url(:large), :class => "round center"), comingsoon %>
 				<h5><%= comingsoon.title %></h5>
 				<p><%= comingsoon.category %></p>
 				<p><%= comingsoon.synopsis %></p>
