@@ -18,6 +18,10 @@ class Nowshowing < ActiveRecord::Base
 	belongs_to :cinema
 	default_scope :order => "nowshowings.created_at DESC"
 
+	searchable do
+		text :title
+	end
+
 	mount_uploader :nowshowingcover, NowshowingcoverUploader
 
 	validates :title,	presence: true,

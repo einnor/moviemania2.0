@@ -16,6 +16,11 @@
 	margin-right: auto;
 }
 
+input{
+
+	text-align: center;
+	}
+
 h4{
 	text-indent: 10px;
 	font-family: "Times New Roman", Arial, "MS Trebuchet", sans-serif;

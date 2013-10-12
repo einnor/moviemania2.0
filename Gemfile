@@ -39,6 +39,10 @@ gem "devise", "~> 3.1.1"
 
 gem "omniauth", "~> 1.1.4"
 
+gem "sunspot_rails", '~> 2.0.0'
+
+gem "sunspot_solr"
+
 #gem "paypal", "~> 2.0.0"
 
 gem "activemerchant", "~> 1.38.1"

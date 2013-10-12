@@ -9,6 +9,7 @@
 		<p><%= nowshowing.synopsis %></p>
 		<p>
 			<%= link_to "Show", cinema_nowshowing_path(@cinema, nowshowing)%> |
+			<%= link_to "Watch Trailer", '#'%> |
 			<% if admin_signed_in? %>
 				<%= link_to "Edit", edit_cinema_nowshowing_path(@cinema, nowshowing) %> |
 				<%= link_to "Destroy", [@cinema, nowshowing], :confirm => "Are you sure you want to delete this movie?", :method => :delete %>
@@ -18,3 +19,4 @@
 	</div>
 
 	<% end %>
+</div>

@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
   	@title = "Home"
+  	@cinemas = Cinema.all
   end
 
   def contacts
@@ -18,4 +19,8 @@ class PagesController < ApplicationController
   def contactus
   	@title = "Contact Us"
   end
+
+  def allnowshowing
+  	@nowshowings = Nowshowing.all
+  	@title = "All Now Showing"
 end

@@ -5,6 +5,11 @@ class CinemasController < ApplicationController
   def index
 		@cinemas = Cinema.all
 		@title = "Cinemas"
+
+		@search = Cinema.search do
+			fulltext params[:search]
+		end
+		@cinemas = @search.results
   end
 
   def new

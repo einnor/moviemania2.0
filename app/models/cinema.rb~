@@ -16,9 +16,6 @@ class Cinema < ActiveRecord::Base
 	has_many :nowshowings, :dependent => :destroy
 	has_many :comingsoons, :dependent => :destroy
 
-	defUlt_scope :order => "nowshowings.created_at DESC"
-	defUlt_scope :order => "comingsoons.created_at DESC"
-
 	mount_uploader :cinemalogo, CinemalogoUploader
 
 	email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

@@ -16,6 +16,10 @@ class Cinema < ActiveRecord::Base
 	has_many :nowshowings, :dependent => :destroy
 	has_many :comingsoons, :dependent => :destroy
 
+	searchable do
+		text :name
+	end
+
 	mount_uploader :cinemalogo, CinemalogoUploader
 
 	email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

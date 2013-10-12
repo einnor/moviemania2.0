@@ -19,4 +19,9 @@ class PagesController < ApplicationController
   def contactus
   	@title = "Contact Us"
   end
+
+  def allnowshowing
+  	@nowshowings = Nowshowing.all
+  	@title = "All Now Showing"
+  end
 end

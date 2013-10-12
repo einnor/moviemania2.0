@@ -1,3 +1,11 @@
+<div class="row">
+	<div class="large-6 columns">
+		<%=form_tag (@cinema), :method => :get do %>
+		<%= text_field_tag :search, params[:search], :class=> "round search", :placeholder=> "Search Cinema..." %>
+	<% end %>
+	</div>
+</div>
+
 <% if admin_signed_in? %>
 	<div class="row">
 		<div class="large-4 columns">
@@ -18,9 +26,6 @@
   			<p><%= cinema.description %> </p>
 
 				<p>
-					<%= link_to "Now Showing", cinema_nowshowings_path(@cinema) %> |
-						<%= link_to "Coming Soon", cinema_comingsoons_path(@cinema) %> <br />
-
 						<% if admin_signed_in? %>
 
 						<%= link_to "Add Showing", new_cinema_nowshowing_path(cinema) %> |

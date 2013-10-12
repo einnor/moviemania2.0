@@ -15,3 +15,9 @@
 	</div>
 
 </div>
+
+<div class="row">
+	<div class="large-12 columns">
+		<p><%= link_to "Back", cinema_nowshowings_path(@cinema) %><p>
+	</div>
+</div>
