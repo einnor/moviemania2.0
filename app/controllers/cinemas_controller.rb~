@@ -4,7 +4,6 @@ class CinemasController < ApplicationController
 
   def index
 		@cinemas = Cinema.all
-		@nowshowings = Nowshowing.all
 		@title = "Cinemas"
 
 		@search = Cinema.search do
