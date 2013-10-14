@@ -7,7 +7,7 @@
 		<h5><%= nowshowing.title %></h5>
 		<p><%= nowshowing.category %></p>
 		<p>Price : <%= number_to_currency nowshowing.price %></p>
-		<p><%= nowshowing.cinema %></p>
+		<p><%= nowshowing.cinema.name %></p>
 		<p><%= nowshowing.synopsis %></p>
 		<p>
 			<%= link_to "Show", cinema_nowshowing_path(@cinema, nowshowing)%> |

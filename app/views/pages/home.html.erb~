@@ -3,7 +3,9 @@
 
 		<!--Orbit Container-->
 		<div class="orbit-container">
-			<ul data-orbit data-options="timer_speed:5000; animation:'fade'; resume_on_mouseout:true; animation_speed:500; navigation_arrows:true; orbit_transition_class:'orbit-transitioning'; ">
+		<div class="preloader"></div>
+			<ul data-orbit data-options="timer_speed:5000; animation:'fade'; resume_on_mouseout:true; animation_speed:100; navigation_arrows:true; orbit_transition_class:'orbit-transitioning'; timer:true; advanceSpeed:10000;" id="featured1">
+
 
 				<% @nowshowings.each do |nowshowing| %>
 					<li><%= image_tag nowshowing.nowshowingcover.url %></li>
@@ -20,6 +22,10 @@
   			</div>
 			</div>
 		</div>
+
+		<script>
+			$("#featured1").on("orbit:before-slide-change", function(event){console.info("before slide change")})
+		</script>
 
 	</div>
 </div>

@@ -16,7 +16,7 @@
 	margin-right: auto;
 }
 
-input{
+input.search{
 
 	text-align: center;
 	}

@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   def home
   	@title = "Home"
   	@cinemas = Cinema.all
-  	@nowshowings = Nowshowing.all
+  	@nowshowings = Cinema.nowshowings
   end
 
   def contacts

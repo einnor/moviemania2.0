@@ -14,7 +14,7 @@ class NowshowingsController < ApplicationController
   end
 
   def edit
-  	@title = "Edit Now Showing"
+  	@title = "Edit #{@nowshowing.title}"
   end
 
   def show
@@ -22,7 +22,7 @@ class NowshowingsController < ApplicationController
   end
 
   def update
-  	@title = "Update Now Showing"
+  	@title = "Update #{@nowshowing.title}"
 
   	if @nowshowing.update_attributes(nowshowing_params)
 			redirect_to cinema_nowshowings_path, :notice => "The movie details have been successfully updated"
@@ -59,5 +59,4 @@ class NowshowingsController < ApplicationController
   def nowshowing_params
   	params.require(:nowshowing).permit(:title, :synopsis, :youtubestub, :price, :category, :nowshowingcover)
   end
-
 end
