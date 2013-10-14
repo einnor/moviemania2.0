@@ -26,7 +26,7 @@
 
   	<section role="main">
   		<div class="row">
-  			<div class="twelve columns leftalignment">
+  			<div class="twelve columns">
 
   				<% if notice %>
   					<p class="alert alert-notice"><%= notice %></p>
@@ -46,5 +46,10 @@
 
 
     <%= javascript_include_tag "application" %>
+
+<script>
+  $(document).foundation();
+</script>
+
   </body>
 </html>
