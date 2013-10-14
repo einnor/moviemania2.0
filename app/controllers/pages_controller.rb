@@ -25,4 +25,9 @@ class PagesController < ApplicationController
   	@nowshowings = Nowshowing.all
   	@title = "All Now Showing"
   end
+
+  def allcomingsoon
+  	@comingsoons = Comingsoon.all
+  	@title = "All Coming Soon"
+  end
 end
