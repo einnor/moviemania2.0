@@ -1,0 +1,29 @@
+<h1>Listing forumcomingsoons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Comingsoon</th>
+      <th>Body</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @forumcomingsoons.each do |forumcomingsoon| %>
+      <tr>
+        <td><%= forumcomingsoon.comingsoon_id %></td>
+        <td><%= forumcomingsoon.body %></td>
+        <td><%= link_to 'Show', forumcomingsoon %></td>
+        <td><%= link_to 'Edit', edit_forumcomingsoon_path(forumcomingsoon) %></td>
+        <td><%= link_to 'Destroy', forumcomingsoon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Forumcomingsoon', new_forumcomingsoon_path %>

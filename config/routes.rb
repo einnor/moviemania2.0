@@ -1,12 +1,12 @@
 Moviemania20::Application.routes.draw do
 
-  #resources :comments
-
   resources :cinemas do
   	resources :nowshowings do
   		resources :comments
   	end
-  	resources :comingsoons
+  	resources :comingsoons do
+  		resources :forumcomingsoons
+  	end
   end
 
   devise_for :admins

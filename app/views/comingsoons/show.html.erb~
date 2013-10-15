@@ -72,3 +72,18 @@
 		<p><%= link_to "Back", cinema_comingsoons_path(@cinema) %><p>
 	</div>
 </div>
+
+
+<!--Comments and Reviews-->
+<div class="commentswrapper round">
+	<div class="comments">
+		<h4 style="text-align:center">Forum</h4>
+		<%= render :partial => @comingsoon.forumcomingsoons %>
+		<%= form_for [@cinema, @comingsoon, Forumcomingsoon.new] do |f| %>
+		<p>
+			<%= f.text_area :body, :label => "New comment/review", as: :text, input_html: {rows:"3"}, :class => "round" %>
+		</p>
+		<%= f.submit "Post", :class => "small radius button" %>
+		<% end %>
+	</div>
+</div>

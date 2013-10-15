@@ -16,6 +16,7 @@
 class Comingsoon < ActiveRecord::Base
 
 	belongs_to :cinema
+	has_many :forumcomingsoons, :dependent => :destroy
 	default_scope :order => "comingsoons.created_at DESC"
 
 	mount_uploader :comingsooncover, ComingsooncoverUploader

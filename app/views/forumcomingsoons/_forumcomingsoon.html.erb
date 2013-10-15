@@ -1,0 +1,8 @@
+<%= div_for(forumcomingsoon) do %>
+
+	<p>
+		<strong>Posted <%= time_ago_in_words(forumcomingsoon.created_at) %> ago</strong><br />
+		<%= h(forumcomingsoon.body) %>
+	</p>
+
+<% end %>
