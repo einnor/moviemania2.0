@@ -68,6 +68,12 @@ div.reservationbutton{
 	width: 130px;
 }
 
+div.transactionlist{
+	margin-left: auto;
+	margin: auto;
+	width:700px;
+}
+
 footer{
 text-align: center;
 background-color: #000000;
