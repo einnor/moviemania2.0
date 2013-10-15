@@ -1,0 +1,18 @@
+<% if @reservation.errors.any? %>
+	<div id="error_explanation" class="round">
+		<h2>
+			<%= pluralize(@reservation.errors.count, "error") %>
+			prohibited this reservation from being saved:
+		</h2>
+
+		<p>
+			There were problems with the following fields:
+		</p>
+		<ul>
+			<%= @reservation.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+
+	</div>
+<% end %>

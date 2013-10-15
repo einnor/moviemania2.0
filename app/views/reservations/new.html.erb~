@@ -1,0 +1,41 @@
+<%= form_for (@reservation) do |f| %>
+
+	<%= render 'shared/reservation_error_messages' %>
+
+	<div class="row">
+		<div class="large-8 columns">
+			<fieldset class="round">
+				<legend>New Transaction</legend>
+
+				<%= f.label :first_name %><br />
+				<%= f.text_field :fname %>
+
+				<%= f.label :second_name %><br />
+				<%= f.text_field :sname %>
+
+				<%= f.label :email %><br />
+				<%= f.email_field :email %>
+
+				<%= f.label :phone %><br />
+				<%= f.email_field :phone %>
+
+				<%= f.label :card_type %><br />
+				<%= f.select :card_type, [["Visa", "visa"],["Master Card", "master"], ["Discover", "discover"],["American Express", "american_express"]],:prompt => 'Select a Card Type' %>
+
+				<%= f.label :card_number %><br />
+    		<%= f.text_field :card_number, :size => 40 %>
+
+    		<%= f.label :card_verification, "Card Verification Value (CVV)" %><br />
+    		<%= f.text_field :card_verification, :size => 40 %>
+
+    		<%= f.label :card_expires_on %><br />
+    		<%= f.date_select :card_expires_on, :discard_day => true, :start_year => Date.today.year,
+   :end_year => Date.today.year+10, :add_month_numbers =>true %>
+
+   			<%= f.submit "Reserve Seat", :class => "small radius button" %>
+
+			</fieldset>
+		</div>
+	</div>
+
+<% end %>

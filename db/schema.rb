@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131015111551) do
+ActiveRecord::Schema.define(version: 20131015181747) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -80,5 +80,33 @@ ActiveRecord::Schema.define(version: 20131015111551) do
     t.string   "nowshowingcover"
     t.integer  "cinema_id"
   end
+
+  create_table "reservations", force: true do |t|
+    t.string   "fname"
+    t.string   "sname"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "ip_address"
+    t.string   "card_type"
+    t.date     "card_expires_on"
+    t.string   "card_number"
+    t.string   "card_verification"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reservationtransactions", force: true do |t|
+    t.string   "action"
+    t.integer  "amount"
+    t.boolean  "success"
+    t.string   "authorization"
+    t.string   "message"
+    t.text     "params"
+    t.integer  "reservation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reservationtransactions", ["reservation_id"], name: "index_reservationtransactions_on_reservation_id"
 
 end

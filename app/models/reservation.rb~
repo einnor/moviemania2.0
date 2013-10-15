@@ -1,0 +1,101 @@
+# == Schema Information
+#
+# Table name: reservations
+#
+#  id                :integer          not null, primary key
+#  fname             :string(255)
+#  sname             :string(255)
+#  email             :string(255)
+#  phone             :string(255)
+#  ip_address        :string(255)
+#  card_type         :string(255)
+#  card_expires_on   :date
+#  card_number       :string(255)
+#  card_verification :string(255)
+#  created_at        :datetime
+#  updated_at        :datetime
+#
+
+class Reservation < ActiveRecord::Base
+
+	attr_accessor :card_numver, :card_verification
+
+	validate :validate_card, :on => :create
+
+	has_many :transactions, :class_name => "Reservationtransaction"
+
+
+	email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
+	validates :fname,				presence: true,
+													length: {maximum: 50}
+	validates :sname,				presence: true,
+													length: {maximum: 50}
+	validates :email, 			presence: true,
+													format: {with: email_regex},
+													uniqueness: {case_sensitive: false }
+	validates :phone,				presence: true
+	validates :card_type,		presence: true
+	validates :phone,				presence: true
+	validates :card_expires_on,				presence: true
+	validates :card_number,	presence: true
+	validates :card_verification, presence: true
+
+
+
+	def purchase
+    response = GATEWAY.purchase(price_in_cents, credit_card, purchase_options)
+    transactions.create!(:action => "purchase", :amount => price_in_cents, :response => response)
+    response.success?
+  end
+
+  #To be debugged later
+  def price_in_cents
+  	10000
+  end
+
+
+	private
+
+	#Sets the purchase options required by PayPal
+	def purchase_options
+	{
+		:ip								=> ip_address
+		:billing_address	=> {
+			:name						=> "#{fname} #{sname}",
+			:address1 => "123 Main St.",
+      :city     => "New York",
+      :state    => "NY",
+      :country  => "US",
+      :zip      => "10001"
+		}
+	}
+	end
+
+
+	#Validates  a credit card
+	 def validate_card
+    unless credit_card.valid?
+      credit_card.errors.full_messages.each do |message|
+        errors[:base] << message
+      end
+    end
+  end
+
+
+
+	#Creates a credit card object for ActiveMerchant
+	def credit_card
+		@credit_card ||= ActiveMerchant::Billing::CreditCard.new(
+
+			:type										=> card_type,
+			:number									=> card_number,
+			:verification_value			=> card_verification,
+			:month									=> card_expires_on.month,
+			:year										=> card_expires_on.year,
+			:first_name							=> fname,
+			:last_name							=> sname
+		)
+	end
+
+end

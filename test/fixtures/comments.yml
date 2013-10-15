@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: comments
+#
+#  id            :integer          not null, primary key
+#  nowshowing_id :integer
+#  body          :text
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:

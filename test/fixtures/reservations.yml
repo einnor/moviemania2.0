@@ -1,0 +1,41 @@
+# == Schema Information
+#
+# Table name: reservations
+#
+#  id                :integer          not null, primary key
+#  fname             :string(255)
+#  sname             :string(255)
+#  email             :string(255)
+#  phone             :string(255)
+#  ip_address        :string(255)
+#  card_type         :string(255)
+#  card_expires_on   :date
+#  card_number       :string(255)
+#  card_verification :string(255)
+#  created_at        :datetime
+#  updated_at        :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  fname: MyString
+  sname: MyString
+  email: MyString
+  phone: MyString
+  ip_address: MyString
+  card_type: MyString
+  card_expires_on: 2013-10-15
+  card_number: MyString
+  card_verification: MyString
+
+two:
+  fname: MyString
+  sname: MyString
+  email: MyString
+  phone: MyString
+  ip_address: MyString
+  card_type: MyString
+  card_expires_on: 2013-10-15
+  card_number: MyString
+  card_verification: MyString
