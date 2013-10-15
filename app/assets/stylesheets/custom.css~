@@ -21,6 +21,7 @@ input.search{
 	text-align: center;
 	}
 
+
 h4{
 	text-indent: 10px;
 	font-family: "Times New Roman", Arial, "MS Trebuchet", sans-serif;
@@ -46,6 +47,20 @@ p{
 
 div.center{
 	margin: 0 auto;
+}
+
+div.commentswrapper{
+	background-color: #EEE;
+	margin-left: auto;
+	margin-right: auto;
+	width: 500px;
+}
+
+div.comments{
+	margin-left: auto;
+	margin-right: auto;
+	width: 400px;
+
 }
 
 footer{

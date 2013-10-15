@@ -1,7 +1,11 @@
 Moviemania20::Application.routes.draw do
 
+  #resources :comments
+
   resources :cinemas do
-  	resources :nowshowings
+  	resources :nowshowings do
+  		resources :comments
+  	end
   	resources :comingsoons
   end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131010180519) do
+ActiveRecord::Schema.define(version: 20131015075403) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -50,6 +50,15 @@ ActiveRecord::Schema.define(version: 20131010180519) do
     t.string   "comingsooncover"
     t.integer  "cinema_id"
   end
+
+  create_table "comments", force: true do |t|
+    t.integer  "nowshowing_id"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["nowshowing_id"], name: "index_comments_on_nowshowing_id"
 
   create_table "nowshowings", force: true do |t|
     t.string   "title"

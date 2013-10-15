@@ -15,6 +15,7 @@ class Cinema < ActiveRecord::Base
 
 	has_many :nowshowings, :dependent => :destroy
 	has_many :comingsoons, :dependent => :destroy
+	has_many :comments, :through => :nowshowings
 
 	searchable do
 		text :name

@@ -22,7 +22,7 @@
 
 		<!--The video player iframe goes here-->
 <iframe id="player" class="center" type="text/html" width="640" height="390"
-  src="http://www.youtube.com/embed/<%=nowshowing.youtubestub%>?enablejsapi=1&origin=http://example.com"
+  src="http://www.youtube.com/embed/<%= @nowshowing.youtubestub%>?enablejsapi=1&origin=http://example.com"
   frameborder="0"></iframe>
 
 	<script>
@@ -71,5 +71,19 @@
 <div class="row">
 	<div class="large-12 columns">
 		<p><%= link_to "Back", cinema_nowshowings_path(@cinema) %><p>
+	</div>
+</div>
+
+<!--Comments and Reviews-->
+<div class="commentswrapper round">
+	<div class="comments">
+		<h4 style="text-align:center">Comments and Reviews</h4>
+		<%= render :partial => @nowshowing.comments%>
+		<%= form_for [@cinema, @nowshowing, Comment.new] do |f| %>
+		<p>
+			<%= f.text_area :body, :label => "New comment/review", as: :text, input_html: {rows:"3"}, :class => "round" %>
+		</p>
+		<%= f.submit "Post", :class => "small radius button" %>
+		<% end %>
 	</div>
 </div>
