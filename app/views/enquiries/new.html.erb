@@ -1,9 +1,13 @@
 <%= form_for @enquiry do |f| %>
+	<%= render "shared/enquiry_error_messages" %>
+
 	<div class="center">
 		<fieldset class="round">
 			<legend>New Enquiry</legend>
 
 			<%= f.text_field :email, :class => "round", :placeholder => "Enter your email address" %>
+
+			<%= f.text_field :head, :class => "round", :placeholder => "Enter the head of your enquiry" %>
 
 			<%= f.text_area :body, :class => "round", :id => "message_area", :placeholder => "Your enquiry..." %>
 

@@ -28,9 +28,8 @@ class EnquiriesController < ApplicationController
   	@enquiry = Enquiry.new(enquiry_params)
 
   	if @enquiry.save
+  		EnquiryMailer.enquiry_mail(@enquiry).deliver
   		redirect_to root_path, :notice => "The enquiry was successfully sent."
-  		EnquiryMailer.sender(@enquiry)
-  		EnquiryMailer.enquiry_mail.deliver(@enquiry)
   	else
   		render 'new'
   	end
@@ -48,6 +47,6 @@ class EnquiriesController < ApplicationController
   end
 
   def enquiry_params
-  	params.require(:enquiry).permit(:email, :body)
+  	params.require(:enquiry).permit(:email, :head, :body)
   end
 end

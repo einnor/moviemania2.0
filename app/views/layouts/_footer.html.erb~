@@ -8,7 +8,7 @@
 					</li>
 					<li><%= link_to "About", about_path %></li>
 					<li><%= link_to "Contacts", contacts_path %></li>
-					<li><%= link_to "Contact Us", contactus_path %></li>
+					<li><%= link_to "Contact Us", new_enquiry_path %></li>
 					<li><%= link_to "Partners", '#' %></li>
 					<li><%= link_to "Help", help_path %></li>
 				</ul>

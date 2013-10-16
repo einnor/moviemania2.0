@@ -1,16 +1,11 @@
 class EnquiryMailer < ActionMailer::Base
-  default from: sender
 
   def enquiry_mail(user)
   	@url = "http://moviemania2-herokuapp.com"
+  	@head = user.head
+  	@body = user.body
 
-  	mail(
-  		to: "rnafundi@gmail.com"
-  		subject: "Enquiry"
-  	)
+  	mail(to: "rnafundi@gmail.com", subject: "Enquiry", from: user.email)
   end
 
-  def sender(user)
-  	user.email
-  end
 end
