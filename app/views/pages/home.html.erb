@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="large-8 columns">
+	<div class="orbitclass">
 
 		<!--Orbit Container-->
 		<div class="orbit-container">
@@ -8,10 +8,11 @@
 
 
 				<% @nowshowings.each do |nowshowing| %>
-					<li><%= image_tag nowshowing.nowshowingcover.url %></li>
+
 					<div class="orbit-caption">
-						<%= nowshowing.title %>
+						<li><%= image_tag nowshowing.nowshowingcover.url, :class => "orbitImages" %></li>
 					</div>
+
 				<% end %>
 
 			</ul>

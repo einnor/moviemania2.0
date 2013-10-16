@@ -47,7 +47,7 @@
 			<% if admin_signed_in? %>
 				<li class="has-dropdown"><%= link_to current_admin.email, "#"%>
 					<ul class="dropdown">
-						<li><%= link_to "View Transactions", reservations_path %></li>
+						<li><%= link_to "View Transactions", allreservations_path %></li>
 						<li><%= link_to "Edit Profile", edit_admin_registration_path %></li>
 						<li><%= link_to "Change Password", edit_admin_password_path %></li>
 						<li><%= link_to "Create New Admin", new_admin_registration_path %></li>

@@ -18,6 +18,8 @@
 
 class Reservation < ActiveRecord::Base
 
+	belongs_to :nowshowing
+
 	attr_accessor :card_numver, :card_verification
 
 	validate :validate_card, :on => :create
@@ -60,7 +62,7 @@ class Reservation < ActiveRecord::Base
 	#Sets the purchase options required by PayPal
 	def purchase_options
 	{
-		:ip								=> ip_address
+		:ip								=> ip_address,
 		:billing_address	=> {
 			:name						=> "#{fname} #{sname}",
 			:address1 => "123 Main St.",

@@ -23,11 +23,17 @@ class PagesController < ApplicationController
 
   def allnowshowing
   	@nowshowings = Nowshowing.all
+  	@cinemas = Cinema.all
   	@title = "All Now Showing"
   end
 
   def allcomingsoon
   	@comingsoons = Comingsoon.all
   	@title = "All Coming Soon"
+  end
+
+  def allreservations
+  	@reservations = Reservation.all
+  	@title = "All Transactions"
   end
 end

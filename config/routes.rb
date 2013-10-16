@@ -1,10 +1,9 @@
 Moviemania20::Application.routes.draw do
 
-  resources :reservations
-
   resources :cinemas do
   	resources :nowshowings do
   		resources :comments
+  		resources :reservations
   	end
   	resources :comingsoons do
   		resources :forumcomingsoons
@@ -19,6 +18,7 @@ Moviemania20::Application.routes.draw do
   get "/contactus",							:to => "pages#contactsus"
   get "/allnowshowing",					:to => "pages#allnowshowing"
   get "/allcomingsoon",					:to => "pages#allcomingsoon"
+  get "/allreservations",				:to => "pages#allreservations"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

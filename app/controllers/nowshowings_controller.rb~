@@ -42,7 +42,7 @@ class NowshowingsController < ApplicationController
   end
 
   def destroy
-		@nowshing.destroy
+		@nowshowing.destroy
 		redirect_to cinema_nowshowings_path, :notice => "The movie has been successfully deleted."
   end
 
@@ -59,9 +59,4 @@ class NowshowingsController < ApplicationController
   def nowshowing_params
   	params.require(:nowshowing).permit(:title, :synopsis, :youtubestub, :price, :category, :nowshowingcover)
   end
-
-	def youtubevideo
-		@nowshowings = @cinema.nowshowings
-		@title = "Watch #{@nowshowing.title}"
-	end
 end

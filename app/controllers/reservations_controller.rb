@@ -1,15 +1,16 @@
 class ReservationsController < ApplicationController
 
   before_action :load_cinema
+  before_action :load_nowshowing
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
 
   def index
-  	@reservations = Reservation.all
+  	@reservations = @cinema.nowshowing.reservations
   	@title = "Reservations"
   end
 
   def new
-  	@reservation = Reservation.new
+  	@reservation = @nowshowing.reservations.build
   	@title = "New Reservation"
   end
 
@@ -31,8 +32,8 @@ class ReservationsController < ApplicationController
   end
 
   def create
-  	#@nowshowing = Nowshowing.find(params[:nowshowing_id])
-  	@reservation = Reservation.new(reservation_params)
+  	@nowshowing = Nowshowing.find(params[:nowshowing_id])
+  	@reservation = @nowshowing.reservations.build(reservation_params)
     @reservation.ip_address = request.remote_ip #yangu
 
     if @reservation.save
@@ -58,11 +59,15 @@ class ReservationsController < ApplicationController
   private
 
   def set_reservation
-  	@reservation = Reservation.find(params[:id])
+  	@reservation = @nowshowing.reservations.find(params[:id])
+  end
+
+  def load_nowshowing
+  	@nowshowing = Nowshowing.find(params[:nowshowing_id])
   end
 
   def load_cinema
-  	#@cinema = Cinema.find(params[:id])
+  	@cinema = Cinema.find(params[:cinema_id])
   end
 
   def reservation_params

@@ -14,9 +14,12 @@
 #  card_verification :string(255)
 #  created_at        :datetime
 #  updated_at        :datetime
+#  nowshowing_id     :integer
 #
 
 class Reservation < ActiveRecord::Base
+
+	belongs_to :nowshowing
 
 	attr_accessor :card_numver, :card_verification
 

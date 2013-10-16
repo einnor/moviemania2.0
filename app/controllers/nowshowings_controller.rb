@@ -42,7 +42,7 @@ class NowshowingsController < ApplicationController
   end
 
   def destroy
-		@nowshing.destroy
+		@nowshowing.destroy
 		redirect_to cinema_nowshowings_path, :notice => "The movie has been successfully deleted."
   end
 

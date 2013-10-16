@@ -1,4 +1,4 @@
-<%= form_for (@reservation) do |f| %>
+<%= form_for [@cinema, @nowshowing, Reservation.new] do |f| %>
 
 	<%= render 'shared/reservation_error_messages' %>
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131015181747) do
+ActiveRecord::Schema.define(version: 20131016071311) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -93,7 +93,10 @@ ActiveRecord::Schema.define(version: 20131015181747) do
     t.string   "card_verification"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "nowshowing_id"
   end
+
+  add_index "reservations", ["nowshowing_id"], name: "index_reservations_on_nowshowing_id"
 
   create_table "reservationtransactions", force: true do |t|
     t.string   "action"

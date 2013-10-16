@@ -17,6 +17,7 @@
 class Nowshowing < ActiveRecord::Base
 	belongs_to :cinema
 	has_many :comments, :dependent => :destroy
+	has_many :reservations,:dependent => :destroy
 	default_scope :order => "nowshowings.created_at DESC"
 
 	searchable do

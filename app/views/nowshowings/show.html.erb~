@@ -12,8 +12,8 @@
 			<p><%= @nowshowing.synopsis %></p>
 			<p><%= @nowshowing.price %></p>
 			<p><%= @nowshowing.created_at %></p>
-			<div class="button">
-				<a class="small radius button" href=<%= new_reservation_path %>>Reserve a seat</a>
+			<div class="reservationbutton">
+				<a class="small radius button" href=<%= new_cinema_nowshowing_reservation_path(@cinema, @nowshowing) %>>Reserve a seat</a>
 			</div>
 	</div>
 

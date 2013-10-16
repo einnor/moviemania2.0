@@ -1,4 +1,4 @@
-<%= form_for (@reservation) do |f| %>
+<%= form_for [@cinema, @nowshowing, Reservation.new] do |f| %>
 
 	<%= render 'shared/reservation_error_messages' %>
 
@@ -17,7 +17,7 @@
 				<%= f.email_field :email %>
 
 				<%= f.label :phone %><br />
-				<%= f.email_field :phone %>
+				<%= f.text_field :phone %>
 
 				<%= f.label :card_type %><br />
 				<%= f.select :card_type, [["Visa", "visa"],["Master Card", "master"], ["Discover", "discover"],["American Express", "american_express"]],:prompt => 'Select a Card Type' %>

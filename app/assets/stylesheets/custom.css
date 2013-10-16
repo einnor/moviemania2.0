@@ -74,6 +74,23 @@ div.transactionlist{
 	width:700px;
 }
 
+div.orbitclass{
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+}
+
+div.orbit-container{
+	width: 600px !important;
+	height: 450px !important;
+	position: relative;
+}
+
+img.orbitImages{
+	width: 600px;
+	height: 400px;
+}
+
 footer{
 text-align: center;
 background-color: #000000;
