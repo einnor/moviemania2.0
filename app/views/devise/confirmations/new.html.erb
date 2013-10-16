@@ -3,7 +3,8 @@
 <%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
   <%= devise_error_messages! %>
 
-  <fieldset class="round">
+  <div class="center">
+  	<fieldset class="round">
   	<legend>Confirmations</legend>
 
   	<div class="row">
@@ -19,7 +20,9 @@
   		</div>
   	</div>
   </fieldset>
+  <p><%= render "devise/shared/links" %></p>
+  </div>
+
+
 
 <% end %>
-
-<%= render "devise/shared/links" %>

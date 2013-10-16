@@ -40,6 +40,7 @@ class ReservationsController < ApplicationController
       #Make Credit card purchase.
       if @reservation.purchase
        	redirect_to cinema_nowshowing_path(@cinema, @nowshowing), :notice => 'You have successfully made a reservation.'
+       	ReservationMailer.reservation_email(@reservation).deliver
        else
           render "new", :notice => 'The reservation was not successful.'
        end
