@@ -93,6 +93,10 @@ img.orbitImages{
 	height: 400px;
 }
 
+textarea#message_area{
+	height: 250px;
+}
+
 footer{
 text-align: center;
 background-color: #000000;

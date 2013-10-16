@@ -1,5 +1,6 @@
 Moviemania20::Application.routes.draw do
 
+  resources :enquiries
   resources :cinemas do
   	resources :nowshowings do
   		resources :comments

@@ -1,0 +1,14 @@
+<%= form_for @enquiry do |f| %>
+	<div class="center">
+		<fieldset class="round">
+			<legend>New Enquiry</legend>
+
+			<%= f.text_field :email, :class => "round", :placeholder => "Enter your email address" %>
+
+			<%= f.text_area :body, :class => "round", :placeholder => "Your enquiry..." %>
+
+			<%= f.submit "Submit Enquiry", :class => "small radius button" %>
+
+		</fieldset>
+	</div>
+<% end %>

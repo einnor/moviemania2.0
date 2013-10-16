@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131016071311) do
+ActiveRecord::Schema.define(version: 20131016140758) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -59,6 +59,20 @@ ActiveRecord::Schema.define(version: 20131016071311) do
   end
 
   add_index "comments", ["nowshowing_id"], name: "index_comments_on_nowshowing_id"
+
+  create_table "enqueries", force: true do |t|
+    t.string   "email"
+    t.string   "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "enquiries", force: true do |t|
+    t.string   "email"
+    t.string   "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "forumcomingsoons", force: true do |t|
     t.integer  "comingsoon_id"
