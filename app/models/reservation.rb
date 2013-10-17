@@ -15,6 +15,7 @@
 #  created_at        :datetime
 #  updated_at        :datetime
 #  nowshowing_id     :integer
+#  reservationcode   :string(255)
 #
 
 class Reservation < ActiveRecord::Base
@@ -43,6 +44,7 @@ class Reservation < ActiveRecord::Base
 	validates :card_expires_on,				presence: true
 	validates :card_number,	presence: true
 	validates :card_verification, presence: true
+	validates :reservationcode, presence: true
 
 
 

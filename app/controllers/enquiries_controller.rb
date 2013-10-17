@@ -28,8 +28,9 @@ class EnquiriesController < ApplicationController
   	@enquiry = Enquiry.new(enquiry_params)
 
   	if @enquiry.save
-  		EnquiryMailer.enquiry_mail(@enquiry).deliver
-  		redirect_to root_path, :notice => "The enquiry was successfully sent."
+  		if EnquiryMailer.enquiry_mail(@enquiry).deliver
+  			redirect_to root_path, :notice => "The enquiry was successfully sent."
+  		end
   	else
   		render 'new'
   	end

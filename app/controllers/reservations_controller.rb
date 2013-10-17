@@ -35,12 +35,14 @@ class ReservationsController < ApplicationController
   	@nowshowing = Nowshowing.find(params[:nowshowing_id])
   	@reservation = @nowshowing.reservations.build(reservation_params)
     @reservation.ip_address = request.remote_ip #yangu
+    @reservation.reservationcode = SecureRandom.hex(6)
 
     if @reservation.save
       #Make Credit card purchase.
       if @reservation.purchase
-       	redirect_to cinema_nowshowing_path(@cinema, @nowshowing), :notice => 'You have successfully made a reservation.'
-       	ReservationMailer.reservation_email(@reservation).deliver
+       	if ReservationMailer.reservation_email(@reservation).deliver
+       		redirect_to cinema_nowshowing_path(@cinema, @nowshowing), :notice => "You have successfully made a reservation. You will receive an email momentarily with your secret reservation code."
+       	end
        else
           render "new", :notice => 'The reservation was not successful.'
        end
@@ -72,6 +74,6 @@ class ReservationsController < ApplicationController
   end
 
   def reservation_params
-  	params.require(:reservation).permit(:fname, :sname, :email, :phone, :ip_address, :card_type, :card_number, :card_verification, :card_expires_on)
+  	params.require(:reservation).permit(:fname, :sname, :email, :phone, :ip_address, :card_type, :reservationcode, :card_number, :card_verification, :card_expires_on)
   end
 end

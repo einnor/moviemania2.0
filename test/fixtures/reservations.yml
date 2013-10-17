@@ -15,6 +15,7 @@
 #  created_at        :datetime
 #  updated_at        :datetime
 #  nowshowing_id     :integer
+#  reservationcode   :string(255)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
