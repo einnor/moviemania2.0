@@ -14,6 +14,12 @@ class CommentsController < ApplicationController
 		end
   end
 
+  def destroy
+  	@comment = Comment.find(params[:id])
+  	@comment.destroy
+		redirect_to cinema_nowshowing_path(@cinema, @nowshowing), :notice => "The comment has been deleted."
+  end
+
 
   private
 
