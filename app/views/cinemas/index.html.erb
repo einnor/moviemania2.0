@@ -31,7 +31,7 @@
 						<%= link_to "Add Showing", new_cinema_nowshowing_path(cinema) %> |
 						<%= link_to "Add Coming Soon", new_cinema_comingsoon_path(cinema) %> |
 						<%= link_to "Edit", edit_cinema_path(cinema) %> |
-						<%= link_to "Destroy", cinema, :confirm => "Are you sure?", :method => :delete %>
+						<%= link_to "Destroy", cinema, :confirm => "Are you sure you want to delete this cinema?", :method => :delete %>
 						<% end %></p>
   		</div>
 <% end %>
