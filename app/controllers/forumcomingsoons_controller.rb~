@@ -4,13 +4,19 @@ class ForumcomingsoonsController < ApplicationController
 
   def create
   	@comingsoon = Comingsoon.find(params[:comingsoon_id])
-  	@forumcomingsoon = @comingsoon.comments.build(forumcomingsoon_params)
+  	@forumcomingsoon = @comingsoon.forumcomingsoons.build(forumcomingsoon_params)
 
   	if @forumcomingsoon.save
 			redirect_to cinema_comingsoon_path(@cinema, @comingsoon), :notice => "The post was successfully saved."
 		else
 			render "new"
 		end
+  end
+
+  def destroy
+  	@forumcomingsoon = Forumcomingsoon.find(params[:id])
+  	@forumcomingsoon.destroy
+		redirect_to cinema_comingsoon_path(@cinema, @comingsoon), :notice => "The comment has been deleted."
   end
 
 

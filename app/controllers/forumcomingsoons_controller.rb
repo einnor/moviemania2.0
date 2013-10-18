@@ -13,6 +13,12 @@ class ForumcomingsoonsController < ApplicationController
 		end
   end
 
+  def destroy
+  	@forumcomingsoon = Forumcomingsoon.find(params[:id])
+  	@forumcomingsoon.destroy
+		redirect_to cinema_comingsoon_path(@cinema, @comingsoon), :notice => "The comment has been deleted."
+  end
+
 
   private
 
