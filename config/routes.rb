@@ -4,8 +4,6 @@ Moviemania20::Application.routes.draw do
   get '/auth/failure',									:to => redirect('/')
   get 'signout', :to => 'sessions#destroy', :as => 'signout'
 
-  #get "sessions/create"
-  #get "sessions/destroy"
   resources :enquiries
   resources :cinemas do
   	resources :nowshowings do

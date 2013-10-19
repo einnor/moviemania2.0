@@ -1,4 +1,14 @@
 <div class="row">
+	<div class="center">
+		<% if current_user %>
+			<p><%= current_user.name %> [<%= link_to "Sign out", signout_path, :id => "sign_out"%>]</p>
+			<% else %>
+				<p><%= link_to "Sign in with Facebook", "/auth/facebook", :id => "sign_in" %></p>
+		<% end %>
+	</div>
+</div>
+
+<div class="row">
 	<div class="orbitclass">
 
 		<!--Orbit Container-->
