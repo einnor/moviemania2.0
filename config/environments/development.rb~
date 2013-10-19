@@ -44,4 +44,11 @@ Moviemania20::Application.configure do
   }
   #config.action_mailer.default_options = {from: 'no-reply@gmail.com'}
 
+
+  FACEBOOK_ID = '528060563948180'
+  FACEBOOK_SECRET = '9482a5f3b233efca3cb413c43404e197'
+
+  TWITTER_KEY = 'QUZuZvxrE84N4HjKaZmz8w'
+  TWITTER_SECRET = 'Pjg1qRolyVLYiR0YOvdMLgKyq1H1KpdgDdBp4ID0M9Y'
+
 end

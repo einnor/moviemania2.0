@@ -17,8 +17,8 @@
 			</div>
 			<div class="small-4 columns">
 			<ul class="home-social">
-				<li><%= link_to image_tag("twitter.png", :alt => 'twitter', :class => "round", :width => 35, :height => 35), 'https://twitter.com' %></li>
-				<li><%= link_to image_tag("facebook.png", :alt => 'facebook', :class => "round", :width => 35, :height => 35), 'https://facebook.com' %>
+				<li><%= link_to image_tag("twitter.png", :alt => 'twitter', :class => "round", :width => 35, :height => 35), "/auth/twitter", :id => "sign_in" %></li>
+				<li><%= link_to image_tag("facebook.png", :alt => 'facebook', :class => "round", :width => 35, :height => 35), "/auth/facebook", :id => "sign_in" %>
 				<li><%= link_to image_tag("mail.png", :alt => 'mail', :class => "round", :width => 35, :height => 35), new_enquiry_path %>
 			</ul>
 		</div>

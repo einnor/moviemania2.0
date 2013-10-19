@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131017103322) do
+ActiveRecord::Schema.define(version: 20131019075410) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -127,5 +127,15 @@ ActiveRecord::Schema.define(version: 20131017103322) do
   end
 
   add_index "reservationtransactions", ["reservation_id"], name: "index_reservationtransactions_on_reservation_id"
+
+  create_table "users", force: true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

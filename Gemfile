@@ -39,6 +39,12 @@ gem "devise", "~> 3.1.1"
 
 gem "omniauth", "~> 1.1.4"
 
+gem "omniauth-twitter", "~> 1.0.1"
+
+gem "omniauth-facebook", "~> 1.4.1"
+
+gem "omniauth-google-oauth2", "~> 0.2.1"
+
 gem "sunspot_rails", '~> 2.0.0'
 
 gem "sunspot_solr"
