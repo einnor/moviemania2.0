@@ -1,13 +1,23 @@
+<div class="center">
+	<div class="panel callout round">
+		<h5>Movies Currently Showing</h5>
+	</div>
+</div>
+
 
 <div class="row">
-	<% @cinemas.nowshowings.each do |nowshowing| %>
+	<div class="panel">
+
+		<% @nowshowings.each do |nowshowing| %>
 	<div class="large-4 columns">
-		<%= link_to (image_tag nowshowing.nowshowingcover.url(:thumb), :class => "round center"), cinema_nowshowing_path(@cinemas, nowshowing)%>
+		<%= image_tag nowshowing.nowshowingcover.url(:thumb), :class => "round center" %>
 		<h5><%= nowshowing.title %></h5>
 		<p><%= nowshowing.category %></p>
 		<p>Price : <%= number_to_currency nowshowing.price %></p>
 		<p><%= nowshowing.cinema.name %></p>
 		<p><%= nowshowing.synopsis %></p>
+
+		<!--
 		<p>
 			<%= link_to "Show", cinema_nowshowing_path(@cinema, nowshowing)%> |
 			<%= link_to "Watch Trailer", cinema_nowshowing_path(@cinema, nowshowing) %> |
@@ -16,7 +26,12 @@
 
 			<% end %>
 		</p>
+		-->
+
 	</div>
 
 	<% end %>
+
+	</div>
+
 </div>
