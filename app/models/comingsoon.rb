@@ -11,6 +11,7 @@
 #  updated_at      :datetime
 #  comingsooncover :string(255)
 #  cinema_id       :integer
+#  release_date    :date
 #
 
 class Comingsoon < ActiveRecord::Base
@@ -28,5 +29,6 @@ class Comingsoon < ActiveRecord::Base
 	validates :youtubestub,	presence: true
 	validates :comingsooncover,	presence: true
 	validates :cinema_id, :presence => true
+	validates :release_date, :presence => true
 
 end

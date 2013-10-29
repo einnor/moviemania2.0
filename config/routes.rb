@@ -20,6 +20,7 @@ Moviemania20::Application.routes.draw do
   get "/contacts",							:to => "pages#contacts"
   get "/about",									:to => "pages#about"
   get "/help",									:to => "pages#help"
+  get "/partners",							:to => "pages#partners"
   get "/allnowshowing",					:to => "pages#allnowshowing"
   get "/allcomingsoon",					:to => "pages#allcomingsoon"
   get "/allreservations",				:to => "pages#allreservations"

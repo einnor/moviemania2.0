@@ -21,6 +21,10 @@ class PagesController < ApplicationController
   	@title = "Contact Us"
   end
 
+  def partners
+  	@title = "Partners"
+  end
+
   def allnowshowing
   	@nowshowings = Nowshowing.all
   	@cinemas = Cinema.all

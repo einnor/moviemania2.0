@@ -57,6 +57,6 @@ class ComingsoonsController < ApplicationController
   end
 
   def comingsoon_params
-		params.require(:comingsoon).permit(:title, :synopsis, :youtubestub, :category, :comingsooncover)
+		params.require(:comingsoon).permit(:title, :synopsis, :youtubestub, :category, :comingsooncover, :release_date)
   end
 end

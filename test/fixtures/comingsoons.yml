@@ -11,6 +11,7 @@
 #  updated_at      :datetime
 #  comingsooncover :string(255)
 #  cinema_id       :integer
+#  release_date    :date
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
