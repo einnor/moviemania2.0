@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -49,6 +49,8 @@ gem "sunspot_rails", '~> 2.0.0'
 
 gem "sunspot_solr"
 
+gem "combined_time_select", "~> 1.0.1"
+
 #gem "paypal", "~> 2.0.0"
 
 gem "activemerchant", "~> 1.38.1"
@@ -58,6 +60,14 @@ gem "activemerchant", "~> 1.38.1"
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :development, :test do
+	gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
 end
 
 # Use ActiveModel has_secure_password

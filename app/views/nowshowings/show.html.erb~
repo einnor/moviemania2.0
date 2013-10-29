@@ -82,11 +82,24 @@
 	<div class="comments">
 		<h4 style="text-align:center">Forum</h4>
 		<%= render :partial => @nowshowing.comments%>
-		<%= form_for [@cinema, @nowshowing, Comment.new] do |f| %>
-		<p>
-			<%= f.text_area :body, :label => "New comment/review", as: :text, input_html: {rows:"3"}, :class => "round" %>
-		</p>
-		<%= f.submit "Post", :class => "small radius button" %>
+
+		<% if current_user %>
+
+			<%= form_for [@cinema, @nowshowing, Comment.new] do |f| %>
+				<p>
+					<%= f.text_area :body, :label => "New comment/review", as: :text, input_html: {rows:"3"}, :class => "round" %>
+				</p>
+				<%= f.submit "Post", :class => "small radius button" %>
+			<% end %>
+
+		<% else %>
+
+			<h4>Sign up through one of these services to participate in the forum</h4>
+			<%= link_to image_tag("twitter.png", :alt => 'twitter', :class => "round", :width => 64, :height => 64), "/auth/twitter", :id => "sign_in" %>
+			<%= link_to image_tag("facebook.png", :alt => 'facebook', :class => "round", :width => 64, :height => 64), "/auth/facebook", :id => "sign_in" %>
+
 		<% end %>
+
+
 	</div>
 </div>

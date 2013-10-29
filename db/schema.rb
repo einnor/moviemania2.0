@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131019075410) do
+ActiveRecord::Schema.define(version: 20131026093010) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -94,6 +94,8 @@ ActiveRecord::Schema.define(version: 20131019075410) do
     t.string   "category"
     t.string   "nowshowingcover"
     t.integer  "cinema_id"
+    t.integer  "no_of_times_per_day"
+    t.text     "screening_time"
   end
 
   create_table "reservations", force: true do |t|

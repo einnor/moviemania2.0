@@ -2,16 +2,18 @@
 #
 # Table name: nowshowings
 #
-#  id              :integer          not null, primary key
-#  title           :string(255)
-#  synopsis        :text
-#  youtubestub     :string(255)
-#  price           :decimal(, )
-#  created_at      :datetime
-#  updated_at      :datetime
-#  category        :string(255)
-#  nowshowingcover :string(255)
-#  cinema_id       :integer
+#  id                  :integer          not null, primary key
+#  title               :string(255)
+#  synopsis            :text
+#  youtubestub         :string(255)
+#  price               :decimal(, )
+#  created_at          :datetime
+#  updated_at          :datetime
+#  category            :string(255)
+#  nowshowingcover     :string(255)
+#  cinema_id           :integer
+#  no_of_times_per_day :integer
+#  screening_time      :text
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html

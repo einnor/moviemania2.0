@@ -1,3 +1,22 @@
+<script language="javascript" type="text/javascript">
+
+	<!-- Hide Javascript
+
+		var number;
+
+		function displayScreeningTimes()
+		{
+			number = document.getElementById("number").value;
+			for(var i=0; i<number; i++)
+			{
+				document.getElementById("write").innerHTML = "";
+			}
+		}
+
+	-->
+
+</script>
+
 <div class="row">
 	<div class="large-12 columns">
 		<p><%= link_to "Back", cinemas_path %><p>
@@ -29,6 +48,26 @@
 
 				<%= f.label :cinema_id %>
 				<%= f.collection_select( :cinema_id, Cinema.order(:name), :id, :name, include_blank:true) %>
+
+				<%= f.label :no_of_times_per_day %>
+				<%= f.text_field :no_of_times_per_day, :id => "number", :onBlur => "displayScreeningTimes();" %>
+
+
+
+				<div class="row">
+
+					<fieldset>
+
+						<legend><%= f.label :screening_time %></legend>
+
+						<div class="row" id="write">
+
+
+						</div>
+
+					</fieldset>
+
+				</div>
 
 				<%= f.label :nowshowingcover %> <br />
 				<%= f.file_field:nowshowingcover %>
