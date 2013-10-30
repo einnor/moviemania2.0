@@ -11,7 +11,7 @@
 #  updated_at      :datetime
 #  comingsooncover :string(255)
 #  cinema_id       :integer
-#  release_date    :date
+#  release_date    :string(255)
 #
 
 class Comingsoon < ActiveRecord::Base

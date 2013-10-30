@@ -20,8 +20,28 @@
 				<%= f.label :price %><br />
 				<%= f.text_field :price %><br />
 
-				<%= f.label :cinema_id %>
-				<%= f.collection_select :cinema_id, Cinema.order(:name), :id, :name, include_blank:true %>
+				<%= f.hidden_field :cinema_id %>
+
+				<div class="row">
+					<fieldset class="panel">
+						<legend><%= f.label :screening_time %></legend>
+
+						<div class="large-3 columns">
+							<%= f.time_select :screening_time,
+								:combined => true,
+								:default => Time.now.change(:hour => 11, :min => 30),
+								:minute_interval => 15,
+								:time_separator =>" ",
+								:start_hour => 6,
+								:start_minute => 30,
+								:end_hour => 23,
+								:end_minute => 30
+							%>
+						</div>
+
+					</fieldset>
+
+				</div>
 
 				<%= image_tag @nowshowing.nowshowingcover.url(:thumb) %>
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131003160945) do
+ActiveRecord::Schema.define(version: 20131029133133) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -38,6 +38,107 @@ ActiveRecord::Schema.define(version: 20131003160945) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "cinemalogo"
+  end
+
+  create_table "comingsoons", force: true do |t|
+    t.string   "title"
+    t.text     "synopsis"
+    t.string   "category"
+    t.string   "youtubestub"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "comingsooncover"
+    t.integer  "cinema_id"
+    t.date     "release_date"
+  end
+
+  create_table "comments", force: true do |t|
+    t.integer  "nowshowing_id"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["nowshowing_id"], name: "index_comments_on_nowshowing_id"
+
+  create_table "enqueries", force: true do |t|
+    t.string   "email"
+    t.string   "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "enquiries", force: true do |t|
+    t.string   "email"
+    t.string   "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "head"
+  end
+
+  create_table "forumcomingsoons", force: true do |t|
+    t.integer  "comingsoon_id"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "forumcomingsoons", ["comingsoon_id"], name: "index_forumcomingsoons_on_comingsoon_id"
+
+  create_table "nowshowings", force: true do |t|
+    t.string   "title"
+    t.text     "synopsis"
+    t.string   "youtubestub"
+    t.decimal  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "category"
+    t.string   "nowshowingcover"
+    t.integer  "cinema_id"
+    t.integer  "no_of_times_per_day"
+    t.text     "screening_time"
+  end
+
+  create_table "reservations", force: true do |t|
+    t.string   "fname"
+    t.string   "sname"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "ip_address"
+    t.string   "card_type"
+    t.date     "card_expires_on"
+    t.string   "card_number"
+    t.string   "card_verification"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "nowshowing_id"
+    t.string   "reservationcode"
+  end
+
+  add_index "reservations", ["nowshowing_id"], name: "index_reservations_on_nowshowing_id"
+
+  create_table "reservationtransactions", force: true do |t|
+    t.string   "action"
+    t.integer  "amount"
+    t.boolean  "success"
+    t.string   "authorization"
+    t.string   "message"
+    t.text     "params"
+    t.integer  "reservation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reservationtransactions", ["reservation_id"], name: "index_reservationtransactions_on_reservation_id"
+
+  create_table "users", force: true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

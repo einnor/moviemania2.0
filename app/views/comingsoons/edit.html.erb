@@ -18,13 +18,15 @@
 				<%= f.text_area :synopsis%><br />
 
 				<%= f.label :category %> <br />
-				<%= f.select :category, options_for_select(%w[Animation Comedy Drama Fantasy Horror Sci-fi Thriller]) %>/>
+				<%= f.select :category, options_for_select(%w[Animation Comedy Drama Fantasy Horror Sci-fi Thriller]) %>
 
 				<%= f.label :youtube_stub %><br />
 				<%= f.text_field :youtubestub%><br />
 
-				<%= f.label :cinema_showing %>
-				<%= f.collection_select :cinemashowing, Cinema.order(:name), :id, :name, include_blank:true %>
+				<%= f.hidden_field :cinema_id %>
+
+				<%= f.label :release_date %>
+				<%= f.text_field :release_date, :id => "release_date" %>
 
 				<%= image_tag @comingsoon.comingsooncover.url(:thumb) %>
 

@@ -2,18 +2,17 @@
 #
 # Table name: nowshowings
 #
-#  id                  :integer          not null, primary key
-#  title               :string(255)
-#  synopsis            :text
-#  youtubestub         :string(255)
-#  price               :decimal(, )
-#  created_at          :datetime
-#  updated_at          :datetime
-#  category            :string(255)
-#  nowshowingcover     :string(255)
-#  cinema_id           :integer
-#  no_of_times_per_day :integer
-#  screening_time      :text
+#  id              :integer          not null, primary key
+#  title           :string(255)
+#  synopsis        :text
+#  youtubestub     :string(255)
+#  price           :decimal(, )
+#  created_at      :datetime
+#  updated_at      :datetime
+#  category        :string(255)
+#  nowshowingcover :string(255)
+#  cinema_id       :integer
+#  screening_time  :time
 #
 
 class Nowshowing < ActiveRecord::Base
@@ -37,7 +36,6 @@ class Nowshowing < ActiveRecord::Base
 	validates :category,	presence: true
 	validates :nowshowingcover,	presence: true
 	validates :cinema_id, :presence => true
-	validates :no_of_times_per_day, :presence => true
 	validates :screening_time, :presence => true
 
 end

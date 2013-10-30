@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131029113433) do
+ActiveRecord::Schema.define(version: 20131029213340) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20131029113433) do
     t.datetime "updated_at"
     t.string   "comingsooncover"
     t.integer  "cinema_id"
-    t.date     "release_date"
+    t.string   "release_date"
   end
 
   create_table "comments", force: true do |t|
@@ -95,8 +95,7 @@ ActiveRecord::Schema.define(version: 20131029113433) do
     t.string   "category"
     t.string   "nowshowingcover"
     t.integer  "cinema_id"
-    t.integer  "no_of_times_per_day"
-    t.text     "screening_time"
+    t.time     "screening_time"
   end
 
   create_table "reservations", force: true do |t|

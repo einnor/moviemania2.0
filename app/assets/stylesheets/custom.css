@@ -100,10 +100,11 @@ textarea#message_area{
 footer{
 	text-align: center;
 	background-color: #000000;
-	position: fixed;
-	bottom : 0px;
+	position: static;
+
+	bottom : 10px;
 	width: 100%;
-	height: 60px;
+	height: 50px;
 }
 
 div ul li img{

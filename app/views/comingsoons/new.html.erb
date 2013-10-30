@@ -24,8 +24,7 @@
 				<%= f.label :youtube_stub %>
 				<%= f.text_field :youtubestub %>
 
-				<%= f.label :cinema_id %>
-				<%= f.collection_select :cinema_id, Cinema.order(:name), :id, :name, include_blank:true %>
+				<%= f.hidden_field :cinema_id %>
 
 				<%= f.label :release_date %>
 				<%= f.text_field :release_date, :id => "release_date" %>

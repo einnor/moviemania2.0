@@ -57,6 +57,6 @@ class NowshowingsController < ApplicationController
   end
 
   def nowshowing_params
-  	params.require(:nowshowing).permit(:title, :synopsis, :youtubestub, :price, :category, :nowshowingcover, :no_of_times_per_day, :screening_time)
+  	params.require(:nowshowing).permit(:title, :synopsis, :youtubestub, :price, :category, :nowshowingcover, :screening_time)
   end
 end

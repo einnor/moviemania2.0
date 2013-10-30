@@ -7,11 +7,11 @@
 <div class="row">
 	<div class="large-12 columns">
 			<%= image_tag @nowshowing.nowshowingcover.url(:large), :class => "round center" %> <br />
-			<h5><%= @nowshowing.title %></h5>
-			<p><%= @nowshowing.category %></p>
+			<h5>Title : <%= @nowshowing.title %></h5>
+			<p>Category : <%= @nowshowing.category %></p>
 			<p><%= @nowshowing.synopsis %></p>
-			<p><%= @nowshowing.price %></p>
-			<p><%= @nowshowing.created_at %></p>
+			<p>Price : <%= number_to_currency @nowshowing.price %></p>
+
 			<div class="reservationbutton">
 				<a class="small radius button" href=<%= new_cinema_nowshowing_reservation_path(@cinema, @nowshowing) %>>Reserve a seat</a>
 			</div>
@@ -94,7 +94,7 @@
 
 		<% else %>
 
-			<h4>Sign up through one of these services to participate in the forum</h4>
+			<h4 style="text-align:center;">Sign up through one of these services to participate in the forum</h4>
 			<%= link_to image_tag("twitter.png", :alt => 'twitter', :class => "round", :width => 64, :height => 64), "/auth/twitter", :id => "sign_in" %>
 			<%= link_to image_tag("facebook.png", :alt => 'facebook', :class => "round", :width => 64, :height => 64), "/auth/facebook", :id => "sign_in" %>
 

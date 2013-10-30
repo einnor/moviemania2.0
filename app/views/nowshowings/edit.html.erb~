@@ -20,8 +20,7 @@
 				<%= f.label :price %><br />
 				<%= f.text_field :price %><br />
 
-				<%= f.label :cinema_id %>
-				<%= f.collection_select :cinema_id, Cinema.order(:name), :id, :name, include_blank:true %>
+				<%= f.hidden_field :cinema_id %>
 
 				<%= image_tag @nowshowing.nowshowingcover.url(:thumb) %>
 

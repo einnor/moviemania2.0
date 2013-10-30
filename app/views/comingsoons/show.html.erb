@@ -7,10 +7,10 @@
 <div class="row">
 	<div class="large-12 columns">
 			<%= image_tag @comingsoon.comingsooncover.url(:large), :class => "round center" %> <br />
-			<h5><%= @comingsoon.title %></h5>
-			<p><%= @comingsoon.category %></p>
+			<h5>Title : <%= @comingsoon.title %></h5>
+			<p>Category : <%= @comingsoon.category %></p>
 			<p><%= @comingsoon.synopsis %></p>
-			<p><%= @comingsoon.created_at %></p>
+			<p>Release Date : <%= @comingsoon.release_date %></p>
 	</div>
 
 </div>
