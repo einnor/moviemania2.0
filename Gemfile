@@ -37,7 +37,7 @@ gem "annotate", "~> 2.5.0"
 
 gem 'zurb-foundation', '~> 4.3.1'
 
-gem "devise", "~> 3.1.1"
+gem "devise", "~> 3.5.10"
 
 gem "omniauth", "~> 1.1.4"
 
