@@ -33,7 +33,7 @@ gem "carrierwave", "~> 0.9.0"
 
 gem "rmagick", "~> 2.13.2"
 
-gem "annotate", "~> 2.5.0"
+gem "annotate", "~> 3.0.3"
 
 gem 'zurb-foundation', '~> 4.3.1'
 
