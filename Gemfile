@@ -39,7 +39,7 @@ gem 'zurb-foundation', '~> 4.3.1'
 
 gem "devise", "~> 3.1.1"
 
-gem "omniauth", "~> 1.1.4"
+gem "omniauth", "~> 1.4.2"
 
 gem "omniauth-twitter", "~> 1.0.1"
 
