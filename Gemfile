@@ -43,7 +43,7 @@ gem "omniauth", "~> 1.1.4"
 
 gem "omniauth-twitter", "~> 1.0.1"
 
-gem "omniauth-facebook", "~> 1.4.1"
+gem "omniauth-facebook", "~> 1.5.1"
 
 gem "omniauth-google-oauth2", "~> 0.2.1"
 
