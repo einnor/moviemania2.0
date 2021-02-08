@@ -29,7 +29,7 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-gem "carrierwave", "~> 0.9.0"
+gem "carrierwave", "~> 1.3.2"
 
 gem "rmagick", "~> 2.13.2"
 
