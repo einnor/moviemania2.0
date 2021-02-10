@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem "carrierwave", "~> 0.9.0"
 
-gem "rmagick", "~> 2.13.2"
+gem "rmagick", "~> 4.2.1"
 
 gem "annotate", "~> 2.5.0"
 
